@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:context=".ActividadCrearTarea">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="7"
+        android:background="#ffdab9">
+        <TextView
+            android:id="@+id/tituloCrearTarea"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="#ffa07a"
+            android:text="@string/tituloCrearTarea"
+            android:gravity="center"
+            android:textSize="30dp">
+        </TextView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:background="#afeeee">
+        <EditText
+            android:id="@+id/textoTituloTarea"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:hint="@string/pistaTituloTarea"></EditText>
+
+        <MultiAutoCompleteTextView
+            android:id="@+id/tipoTarea"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:hint="@string/pistaTipoTarea">
+        </MultiAutoCompleteTextView>
+
+        <CheckBox
+            android:id="@+id/opcionIndividual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="30dp"
+            android:text="@string/opcionIndividual">
+        </CheckBox>
+        <CheckBox
+            android:id="@+id/opcionColectiva"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="30dp"
+            android:text="@string/opcionColectiva"
+            >
+        </CheckBox>
+
+        <EditText
+            android:id="@+id/textoDescripcion"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:hint="@string/pistaDescripcion"></EditText>
+        <TextView
+            android:id="@+id/textoPrioridad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/textoPrioridad"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:layout_marginTop="100dp">
+
+        </TextView>
+
+
+        <SeekBar
+            android:id="@+id/barraPrioridad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:max="10"
+            android:min="0"
+            android:progress="5">
+        </SeekBar>
+
+        <Button
+            android:id="@+id/botonCrearTarea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:text="@string/crearTarea"
+            android:textColor="#ffa07a"
+            android:backgroundTint="#ffdab9"></Button>
+    </LinearLayout>
+
+</LinearLayout>

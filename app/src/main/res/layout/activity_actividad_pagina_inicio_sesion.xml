@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:layout_height="match_parent" tools:context=".ActividadPaginaRegistro" android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:background="#2196F3">
+        <TextView
+            android:id="@+id/tituloInicioSesion"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/tituloInicioSesion"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="40dp"
+            android:textSize="35sp"
+            android:background="#96B6C5"
+            android:textColor="#E0E0E0"
+            android:textStyle="bold"
+            android:padding="16dp"
+            android:shadowColor="#8eb6ed"
+            android:shadowDx="3"
+            android:shadowDy="3"
+            android:shadowRadius="10">
+        </TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/textoNombreInicioSesion"
+            android:layout_width="249dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:layout_marginLeft="80dp"
+            android:layout_marginBottom="40dp"
+            android:backgroundTint="#2196F3"
+            android:hint="Nombre"></EditText>
+
+        <EditText
+            android:id="@+id/textoContraseñasInicioSesion"
+            android:layout_width="249dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:layout_marginLeft="80dp"
+            android:layout_marginBottom="40dp"
+            android:backgroundTint="#2196F3"
+            android:hint="Contraseña"></EditText>
+
+        <RadioGroup
+            android:id="@+id/SelectorPuestoTrabajoInicio"
+            android:layout_width="wrap_content"
+            android:layout_height="39dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/opcionDocenteInicio"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:checked="false"
+                android:text="Docente"></RadioButton>
+
+            <RadioButton
+                android:id="@+id/opcionCoordinadorInicio"
+                android:layout_width="115dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="8dp"
+                android:checked="false"
+                android:text="Coordinador"></RadioButton>
+
+            <RadioButton
+                android:id="@+id/opcionJefeEstudiosInicio"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="8dp"
+                android:checked="false"
+                android:text="Jefe de estudios"></RadioButton>
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/botonCompletarInicio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:backgroundTint="#2196F3"
+            android:text="@string/textoCompletarInicio"
+            tools:ignore="DuplicateIds"></Button>
+
+        <TextView
+            android:id="@+id/textoErrorInicio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/textoErrorInicioSesion"
+            android:textColor="#EF5A5A"
+            android:visibility="invisible">
+        </TextView>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:background="#96B6C5"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/botonVolverPantallaInicio"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FF8080"
+            android:text="@string/textoVolver"
+            ></Button>
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:layout_height="match_parent" tools:context=".ActividadPaginaRegistro" android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:background="#2196F3">
+        <TextView
+            android:id="@+id/tituloHorario"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/tituloHorario"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="40dp"
+            android:textSize="35sp"
+            android:background="#96B6C5"
+            android:textColor="#E0E0E0"
+            android:textStyle="bold"
+            android:padding="16dp"
+            android:shadowColor="#8eb6ed"
+            android:shadowDx="3"
+            android:shadowDy="3"
+            android:shadowRadius="10">
+        </TextView>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="1">
+
+            <!-- Encabezados de la tabla -->
+            <TableRow>
+                <TextView
+                    android:text="Hora"
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:background="@android:color/holo_blue_light"/>
+                <TextView
+                    android:text="Lunes"
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:background="@android:color/holo_green_light"/>
+                <TextView
+                    android:text="Martes"
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:background="@android:color/holo_green_light"/>
+                <TextView
+                    android:text="Miércoles"
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:background="@android:color/holo_green_light"/>
+                <TextView
+                    android:text="Jueves"
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:background="@android:color/holo_green_light"/>
+                <TextView
+                    android:text="Viernes"
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:background="@android:color/holo_green_light"/>
+            </TableRow>
+
+            <!-- Filas de datos -->
+            <TableRow>
+                <TextView
+                    android:text="8:00 AM - 9:30 AM"
+                    android:padding="8dp"
+                    android:gravity="center"/>
+                <TextView
+                    android:text="Clase de Matemáticas"
+                    android:padding="8dp"
+                    android:gravity="center"/>
+                <TextView
+                    android:text="Clase de Historia"
+                    android:padding="8dp"
+                    android:gravity="center"/>
+                <TextView
+                    android:text="Reunión de Profesores"
+                    android:padding="8dp"
+                    android:gravity="center"/>
+                <TextView
+                    android:text="Clase de Ciencias"
+                    android:padding="8dp"
+                    android:gravity="center"/>
+                <TextView
+                    android:text="Clase de Inglés"
+                    android:padding="8dp"
+                    android:gravity="center"/>
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:text="9:45 AM - 11:15 AM"
+                    android:padding="8dp"
+                    android:gravity="center"/>
+                <TextView
+                    android:text="Clase de Ciencias"
+                    android:padding="8dp"
+                    android:gravity="center"/>
+                <TextView
+                    android:text="Guardia"
+                    android:padding="8dp"
+                    android:gravity="center"/>
+                <TextView
+                    android:text="Reunión de Departamento"
+                    android:padding="8dp"
+                    android:gravity="center"/>
+                <TextView
+                    android:text="Clase de Historia"
+                    android:padding="8dp"
+                    android:gravity="center"/>
+                <TextView
+                    android:text="Clase de Ciencias"
+                    android:padding="8dp"
+                    android:gravity="center"/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:text="11:45 AM - 13:15 AM"
+                    android:padding="8dp"
+                    android:gravity="center"/>
+                <TextView
+                    android:text="Clase de Lenguaje"
+                    android:padding="8dp"
+                    android:gravity="center"/>
+                <TextView
+                    android:text="Clase de Francés"
+                    android:padding="8dp"
+                    android:gravity="center"/>
+                <TextView
+                    android:text="Reunión de Departamento"
+                    android:padding="8dp"
+                    android:gravity="center"/>
+                <TextView
+                    android:text="Clase de Ciencias"
+                    android:padding="8dp"
+                    android:gravity="center"/>
+                <TextView
+                    android:text="Clase de Química"
+                    android:padding="8dp"
+                    android:gravity="center"/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:text="13:20 AM - 14:30 AM"
+                    android:padding="8dp"
+                    android:gravity="center"/>
+                <TextView
+                    android:text="Clase de Matemáticas"
+                    android:padding="8dp"
+                    android:gravity="center"/>
+                <TextView
+                    android:text="Clase de Inglés"
+                    android:padding="8dp"
+                    android:gravity="center"/>
+                <TextView
+                    android:text="Clase de Lenguaje"
+                    android:padding="8dp"
+                    android:gravity="center"/>
+                <TextView
+                    android:text="Guardia"
+                    android:padding="8dp"
+                    android:gravity="center"/>
+                <TextView
+                    android:text="Guardia"
+                    android:padding="8dp"
+                    android:gravity="center"/>
+            </TableRow>
+
+
+
+        </TableLayout>
+        </HorizontalScrollView>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:background="#96B6C5"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/botonVolverPantallaHorario"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FF8080"
+            android:text="@string/textoVolver"
+            >
+        </Button>
+
+    </LinearLayout>
+</LinearLayout>

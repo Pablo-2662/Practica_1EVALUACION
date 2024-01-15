@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActividadCrearReunion">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#BEADFA">
+
+        <!-- Título -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#D0BFFF"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:id="@+id/tituloCrearReunion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/tituloCrearReunion"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="30dp">
+            </TextView>
+        </LinearLayout>
+
+        <!-- Asunto -->
+        <EditText
+            android:id="@+id/textoAsunto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Asunto de la reunión"
+            android:layout_margin="20dp">
+        </EditText>
+
+        <!-- CalendarView para Fecha -->
+        <CalendarView
+            android:id="@+id/calendario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp">
+        </CalendarView>
+
+        <!-- TimePicker para Hora -->
+        <TimePicker
+            android:id="@+id/eleccionHora"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp">
+        </TimePicker>
+
+        <!-- EditText para Participantes -->
+        <EditText
+            android:id="@+id/textoParticipantes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Añadir participantes a la reunión"
+            android:layout_margin="20dp">
+        </EditText>
+
+        <!-- Botones y elementos relacionados -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_margin="20dp">
+
+            <Button
+                android:id="@+id/botonCrearConfirmar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#8EACCD"
+                android:layout_marginRight="20dp"
+                android:text="@string/textoCrear">
+            </Button>
+
+            <Button
+                android:id="@+id/botonEnviarReunion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#8EACCD"
+                android:layout_marginRight="20dp"
+                android:text="@string/textoEnviar">
+            </Button>
+
+            <ImageButton
+                android:id="@+id/imagenEliminarReunión"
+                android:layout_width="111dp"
+                android:layout_height="54dp"
+                android:backgroundTint="#8EACCD"
+                android:scaleType="fitCenter"
+                android:src="@drawable/basura">
+            </ImageButton>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

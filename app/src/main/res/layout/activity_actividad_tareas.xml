@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActividadTareas"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2.5"
+        android:background="#d8f8e1"
+        android:layout_gravity="center">
+        <TextView
+            android:id="@+id/tituloTareas"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/tituloTareas"
+            android:textSize="30dp">
+        </TextView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/white">
+        <Button
+            android:id="@+id/botonEjemploTarea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="#b2e2f2"
+            android:textColor="@color/black"
+            android:text="@string/ejemploTarea">
+        </Button>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2.7"
+        android:background="#b0c2f2"
+        android:layout_gravity="center">
+
+        <Button
+            android:id="@+id/botonVolverTareas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#b2e2f2"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginRight="20dp"
+            android:text="@string/textoVolver"
+            android:textColor="@color/black">
+        </Button>
+        <Button
+            android:id="@+id/botonAgregarTarea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#b2e2f2"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:text="@string/agregarTarea"
+            android:textColor="@color/black">
+        </Button>
+    </LinearLayout>
+
+</LinearLayout>

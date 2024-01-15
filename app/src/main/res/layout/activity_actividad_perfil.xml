@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActividadPerfil"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:background="#8DDFCB">
+
+        <TextView
+            android:id="@+id/tituloPerfil"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/tituloPerfil"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="40dp"
+            android:textSize="35sp"
+            android:background="#96B6C5"
+            android:textColor="#E0E0E0"
+            android:textStyle="bold"
+            android:padding="16dp"
+            android:shadowColor="#8eb6ed"
+            android:shadowDx="3"
+            android:shadowDy="3"
+            android:shadowRadius="10">
+        </TextView>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_weight="1"
+        android:gravity="left|center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/etiquetaNombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nombre:"
+            android:textSize="28sp"
+            android:textColor="#333333"
+            android:textStyle="bold"
+            android:paddingBottom="8dp" />
+
+        <EditText
+        android:id="@+id/datoNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:layout_marginRight="50dp"
+        android:textColor="#555555"
+        android:paddingBottom="16dp"
+            android:enabled="false"
+
+            />
+
+        <TextView
+            android:id="@+id/etiquetaPuesto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Puesto:"
+            android:textSize="24sp"
+            android:textColor="#333333"
+            android:paddingBottom="8dp" />
+
+        <EditText
+            android:id="@+id/datoPuesto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:layout_marginRight="50dp"
+            android:textColor="#555555"
+            android:paddingBottom="16dp"
+            android:enabled="false"
+            />
+
+        <TextView
+            android:id="@+id/etiquetaTelefono"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Teléfono:"
+            android:textSize="24sp"
+            android:textColor="#333333"
+            android:paddingBottom="8dp" />
+
+        <EditText
+            android:id="@+id/datoTelefono"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:layout_marginRight="50dp"
+            android:textColor="#555555"
+            android:paddingBottom="16dp"
+            android:enabled="false"
+            />
+
+        <TextView
+            android:id="@+id/etiquetaCorreo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Correo:"
+            android:textSize="24sp"
+            android:textColor="#333333"
+            android:paddingBottom="8dp" />
+
+        <EditText
+            android:id="@+id/datoCorreo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:layout_marginRight="50dp"
+            android:textColor="#555555"
+            android:paddingBottom="16dp"
+            android:enabled="false"
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:background="#8DDFCB"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/botonVolverPantallaPerfil"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FF8080"
+            android:text="@string/textoVolver"
+            android:layout_marginRight="30dp"></Button>
+        <Button
+            android:id="@+id/botonEditarPerfil"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#2196F3"
+            android:text="@string/editar"
+            android:layout_marginRight="30dp"
+            tools:ignore="DuplicateIds"></Button>
+        <Button
+            android:id="@+id/botonConfirmarEdiccion"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#2196F3"
+            android:text="HECHO"
+            tools:ignore="DuplicateIds"></Button>
+    </LinearLayout>
+</LinearLayout>

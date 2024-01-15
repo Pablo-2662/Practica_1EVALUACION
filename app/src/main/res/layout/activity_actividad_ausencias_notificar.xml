@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ActividadAusenciasNotificar">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="3.5"
+        android:layout_gravity="center"
+        android:background="#363062"
+        >
+        <TextView
+            android:id="@+id/tituloAusencia"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textSize="30dp"
+            android:text="@string/tituloNotificarAusencia"
+            android:textColor="@color/white">
+        </TextView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1.5"
+        android:orientation="vertical"
+        >
+        <MultiAutoCompleteTextView
+            android:id="@+id/causasDeAusencia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ingrese el motivo de la ausencia"
+            android:textColor="@color/black" />
+
+        <CalendarView
+            android:id="@+id/calendarioAusencia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/textoComentarios"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Agregar comentarios (detalles, horas de ausencia)"
+            android:textColor="@color/black" />
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="3.5"
+        android:background="#363062"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        >
+
+        <Button
+            android:id="@+id/botonVolverPantallaInformarAusencia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="60dp"
+            android:backgroundTint="#8eb6ed"
+            android:text="@string/textoVolver"></Button>
+        <Button
+            android:id="@+id/botonNotificarAusencia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="60dp"
+            android:backgroundTint="#8eb6ed"
+            android:text="@string/textoNotificarAusencia"></Button>
+    </LinearLayout>
+
+
+
+</LinearLayout>

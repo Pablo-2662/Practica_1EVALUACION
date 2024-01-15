@@ -1,0 +1,89 @@
+<resources>
+
+    //Strings utilizadas en la página principal
+    <string name="app_name">Practica_1EVALUACION</string>
+    <string name="textoBienvenida">BIENVENIDO</string>
+    <string name="textobotonRegistro">Regístrate</string>
+    <string name="textobotonInicioSesion">Inicia Sesión</string>
+
+    //Strings utilizadas en la página de registro
+    <string name="tituloRegistro">Registro</string>
+    <string name="textoVolver">Volver</string>
+    <string name="textoCompletarRegistro">Hecho</string>
+
+    //Strings utilizadas en la pagina de inicio de sesion
+    <string name="tituloInicioSesion">Inicio de Sesion</string>
+    <string name="textoCompletarInicio">INICIA SESIÓN</string>
+    <string name="textoErrorInicioSesion">Los datos introducidos son incorrectos</string>
+
+    //Strings utilizadas en la pagina de menú de usuario
+    <string name="saludoMenu">HOLA DE NUEVO</string>
+    <string name="textoBotonAusencias">AUSENCIAS</string>
+    <string name="textoBotonTareas">TAREAS</string>
+    <string name="textoBotonMensajes">MENSAJES</string>
+
+    //Strings utilizadas en la pagina del perfil
+    <string name="editar">EDITAR</string>
+    <string name="tituloPerfil">PERFIL DE USUARIO</string>
+    <string name="tituloEditar">EDITAR PERFIL</string>
+
+    //Pagina horario
+    <string name="tituloHorario">HORARIO</string>
+
+    //Pagina reuniones
+    <string name="tituloReuniones">REUNIONES</string>
+    <string name="ejemploReuniones">ASUNTO / FECHA / HORA</string>
+    <string name="reunion">EVALUACIÓN DE ALUMNOS / 05-11-2023 / 12:23</string>
+    <string name="crearReunion">CREAR REUNIÓN</string>
+
+    //Pagina crear reunión
+    <string name="tituloCrearReunion">NUEVA REUNIÓN</string>
+    <string name="textoCrear">CREAR</string>
+    <string name="textoEnviar">ENVIAR</string>
+
+    //Página ausencias jefe estudios
+    <string name="tituloAusencias">INFORMES DE AUSENCIAS</string>
+    <string name="textoAñadirInforme">AÑADIR</string>
+    <string name="informePrueba">INFORME AUSENCIAS JUAN 20/10/23</string>
+    <string name="tituloCrearInforme">NUEVO INFORME</string>
+    <string name="confirmarInforme">CONFIRMAR INFORME</string>
+    <string name="pistaTituloInforme">título del informe</string>
+    <string name="pistaContenidoInforme">escribe el contenido...</string>
+
+    //Pagina notificar ausencias
+    <string name="tituloNotificarAusencia">AUSENCIA</string>
+    <string name="textoNotificarAusencia">NOTIFICAR</string>
+
+    //Página tareas
+    <string name="tituloTareas">TAREAS</string>
+    <string name="agregarTarea">AÑADIR</string>
+    <string name="ejemploTarea">FIRMA DE ACTAS COLECTIVA 09/12/2023</string>
+    <string name="tituloCrearTarea">NUEVA TAREA</string>
+    <string name="pistaTituloTarea">título de tarea...</string>
+    <string name="pistaTipoTarea">tipo de tarea...</string>
+    <string name="opcionIndividual">INDIVIDUAL</string>
+    <string name="opcionColectiva">COLECTIVA</string>
+    <string name="pistaDescripcion">detalles de la tarea...</string>
+    <string name="textoPrioridad">Prioridad de tarea</string>
+    <string name="crearTarea">CREAR</string>
+
+    //Página permisos
+    <string name="textoBotonPermisos">PERMISOS</string>
+    <string name="tituloPermisos">PERMISOS SOLICITADOS</string>
+    <string name="tituloCrearPermisos">SOLICITAR PERMISO</string>
+    <string name="textoSolicitar">SOLICITAR</string>
+    <string name="motivoPermiso">introduce el motivo del permiso...</string>
+    <string name="detalles">detalles de permiso...</string>
+
+    //Página mensajes
+    <string name="tituloMensajes">MENSAJES</string>
+    <string name="textoMensajePrueba">Roberto Sanz: Hoy: 09:23</string>
+    <string name="tituloNuevoMensaje">NUEVO MENSAJE</string>
+    <string name="enviarMensaje">ENVIAR</string>
+    <string name="pistaUsuarioMensaje">para...</string>
+    <string name="pistaTituloMensaje">titulo...</string>
+    <string name="pistaAsuntoMensaje">asunto...</string>
+    <string name="pistaContenidoMensaje">mensaje...</string>
+
+
+</resources>
