@@ -32,25 +32,52 @@
         android:gravity="center"
         android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/textoNombreInicioSesion"
-            android:layout_width="249dp"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textinput_nombreInicio"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="top"
-            android:layout_marginLeft="80dp"
-            android:layout_marginBottom="40dp"
-            android:backgroundTint="#2196F3"
-            android:hint="Nombre"></EditText>
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            app:boxCornerRadiusBottomEnd="40dp"
+            app:boxCornerRadiusBottomStart="40dp"
+            app:boxCornerRadiusTopEnd="40dp"
+            app:boxCornerRadiusTopStart="40dp"
+            app:counterMaxLength="30"
+            app:counterEnabled="true"
+            app:helperText="Nombre y apellido"
+            android:hint="NOMBRE">
+            <EditText
+                android:id="@+id/textoNombreInicioSesion"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="text">
+            </EditText>
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <EditText
-            android:id="@+id/textoContraseñasInicioSesion"
-            android:layout_width="249dp"
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_marginTop="30dp"
+            android:id="@+id/textinput_contrasenyaInicio"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="top"
-            android:layout_marginLeft="80dp"
-            android:layout_marginBottom="40dp"
-            android:backgroundTint="#2196F3"
-            android:hint="Contraseña"></EditText>
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            app:boxCornerRadiusBottomEnd="40dp"
+            app:boxCornerRadiusBottomStart="40dp"
+            app:boxCornerRadiusTopEnd="40dp"
+            app:boxCornerRadiusTopStart="40dp"
+            app:counterMaxLength="10"
+            app:counterEnabled="true"
+            app:helperText="No puede contener caracteres especiales"
+            android:hint="CONTRASEÑA">
+            <EditText
+                android:id="@+id/textoContrasenyaInicioSesion"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="text">
+            </EditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
 
         <RadioGroup
             android:id="@+id/SelectorPuestoTrabajoInicio"
