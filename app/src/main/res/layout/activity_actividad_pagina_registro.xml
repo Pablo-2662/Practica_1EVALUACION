@@ -38,15 +38,51 @@
         android:gravity="center"
         android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/textoNombreRegistro"
-            android:layout_width="249dp"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textinput_nombreRegistro"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="top"
-            android:layout_marginLeft="80dp"
-            android:layout_marginBottom="40dp"
-            android:backgroundTint="#2196F3"
-            android:hint="Nombre"></EditText>
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            app:boxCornerRadiusBottomEnd="40dp"
+            app:boxCornerRadiusBottomStart="40dp"
+            app:boxCornerRadiusTopEnd="40dp"
+            app:boxCornerRadiusTopStart="40dp"
+            app:counterMaxLength="30"
+            app:counterEnabled="true"
+            app:helperText="Nombre y apellido"
+            android:hint="NOMBRE">
+            <EditText
+                android:id="@+id/textoNombreRegistro"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="text">
+            </EditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textinput_contrasenaRegistro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            app:boxCornerRadiusBottomEnd="40dp"
+            app:boxCornerRadiusBottomStart="40dp"
+            app:boxCornerRadiusTopEnd="40dp"
+            app:boxCornerRadiusTopStart="40dp"
+            app:counterMaxLength="30"
+            app:counterEnabled="true"
+            app:helperText="No puede haber caracteres especiales"
+            android:hint="CONTRASEÑA">
+            <EditText
+                android:id="@+id/textoNombreRegistro"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="text">
+            </EditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
 
         <EditText
             android:id="@+id/textoContraseñasRegistro"

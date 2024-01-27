@@ -35,7 +35,7 @@ public class ActividadPaginaInicioSesion extends AppCompatActivity {
         String contraseña3;
         String puestoDeTrabajo3;
         EditText textoName = (EditText) findViewById(R.id.textoNombreInicioSesion);
-        EditText textoPasswd = (EditText) findViewById(R.id.textoContraseñasInicioSesion);
+        EditText textoPasswd = (EditText) findViewById(R.id.textoContrasenyaInicioSesion);
         TextView textoOculto = (TextView) findViewById(R.id.textoErrorInicio);
         RadioGroup opcionesPuestoInicio = findViewById(R.id.SelectorPuestoTrabajoInicio);
         RadioButton opcionInicioDocente = findViewById(R.id.opcionDocenteInicio);

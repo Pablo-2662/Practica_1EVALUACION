@@ -8,7 +8,7 @@
     <string name="textoVolver">Volver</string>
     <string name="textoCompletarRegistro">Hecho</string>
     <string name="tituloInicioSesion">Inicio de Sesion</string>
-    <string name="textoCompletarInicio">INICIA SESIÓN</string>
+    <string name="textoCompletarInicio">ACCEDER</string>
     <string name="textoErrorInicioSesion">Los datos introducidos son incorrectos</string>
     <string name="saludoMenu">HOLA DE NUEVO</string>
     <string name="textoBotonAusencias">AUSENCIAS</string>

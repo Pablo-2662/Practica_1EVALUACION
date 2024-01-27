@@ -57,14 +57,20 @@
             <Button
                 android:id="@+id/botonPaginaRegistro"
                 android:layout_width="206dp"
+                style="@style/Widget.Material3.Button.ElevatedButton"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:textColor="@color/white"
+                android:textSize="25dp"
                 android:layout_marginBottom="16dp"
                 android:text="@string/textobotonRegistro"
                 android:backgroundTint="#8eb6ed"/>
             <Button
                 android:id="@+id/botonPaginaInicioSesion"
                 android:layout_width="205dp"
+                android:textColor="@color/white"
+                android:textSize="25dp"
+                style="@style/Widget.Material3.Button.ElevatedButton"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="@string/textobotonInicioSesion"
