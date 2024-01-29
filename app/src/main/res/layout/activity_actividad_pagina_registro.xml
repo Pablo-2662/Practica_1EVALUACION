@@ -71,52 +71,70 @@
             app:boxCornerRadiusBottomStart="40dp"
             app:boxCornerRadiusTopEnd="40dp"
             app:boxCornerRadiusTopStart="40dp"
-            app:counterMaxLength="30"
+            android:layout_marginTop="20dp"
+            app:counterMaxLength="10"
             app:counterEnabled="true"
             app:helperText="No puede haber caracteres especiales"
             android:hint="CONTRASEÑA">
             <EditText
-                android:id="@+id/textoNombreRegistro"
+                android:id="@+id/textoContrasenyaRegistro"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textPassword">
+            </EditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textinput_emailRegistro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            app:boxCornerRadiusBottomEnd="40dp"
+            app:boxCornerRadiusBottomStart="40dp"
+            app:boxCornerRadiusTopEnd="40dp"
+            app:boxCornerRadiusTopStart="40dp"
+            android:layout_marginTop="20dp"
+            app:counterMaxLength="30"
+            app:counterEnabled="true"
+            android:hint="EMAIL">
+            <EditText
+                android:id="@+id/textoEmailRegistro"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:inputType="text">
             </EditText>
         </com.google.android.material.textfield.TextInputLayout>
 
-
-        <EditText
-            android:id="@+id/textoContraseñasRegistro"
-            android:layout_width="249dp"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textinput_telefonoRegistro"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="top"
-            android:layout_marginLeft="80dp"
-            android:layout_marginBottom="40dp"
-            android:backgroundTint="#2196F3"
-            android:hint="Contraseña"></EditText>
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            app:boxCornerRadiusBottomEnd="40dp"
+            app:boxCornerRadiusBottomStart="40dp"
+            app:boxCornerRadiusTopEnd="40dp"
+            app:boxCornerRadiusTopStart="40dp"
+            android:layout_marginTop="20dp"
+            app:counterMaxLength="9"
+            app:helperText="No incluir espacios"
+            app:counterEnabled="true"
+            android:hint="TELÉFONO">
+            <EditText
+                android:id="@+id/textoTelefonoRegistro"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="number">
+            </EditText>
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <EditText
-            android:id="@+id/textoEmailRegistro"
-            android:layout_width="249dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="top"
-            android:layout_marginLeft="80dp"
-            android:layout_marginBottom="40dp"
-            android:backgroundTint="#2196F3"
-            android:hint="Email"></EditText>
 
-        <EditText
-            android:id="@+id/textoTelefonoRegistro"
-            android:layout_width="249dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="top"
-            android:layout_marginLeft="80dp"
-            android:layout_marginBottom="40dp"
-            android:backgroundTint="#2196F3"
-            android:hint="Teléfono"></EditText>
 
         <RadioGroup
             android:id="@+id/SelectorPuestoTrabajo"
             android:layout_width="wrap_content"
+            android:layout_marginTop="20dp"
             android:layout_height="39dp"
             android:gravity="center"
             android:orientation="horizontal">
@@ -163,6 +181,9 @@
         <Button
             android:id="@+id/botonVolverPantallaRegistro"
             android:layout_width="120dp"
+            style="@style/Widget.Material3.Button.ElevatedButton"
+            android:textSize="20dp"
+            android:textColor="@color/white"
             android:layout_height="wrap_content"
             android:backgroundTint="#FF8080"
             android:text="@string/textoVolver"
@@ -170,6 +191,9 @@
         <Button
             android:id="@+id/botonCompletarRegistro"
             android:layout_width="120dp"
+            style="@style/Widget.Material3.Button.ElevatedButton"
+            android:textColor="@color/white"
+            android:textSize="20dp"
             android:layout_height="wrap_content"
             android:backgroundTint="#2196F3"
             android:text="@string/textoCompletarRegistro"

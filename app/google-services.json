@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "417590222946",
+    "project_id": "bbddeduplanner",
+    "storage_bucket": "bbddeduplanner.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:417590222946:android:6b9b7a9d934caa1f89b13b",
+        "android_client_info": {
+          "package_name": "com.example.practica_1evaluacion"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3d-ugq9FO__ybKpCgOApok5jZPJLxD7I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
