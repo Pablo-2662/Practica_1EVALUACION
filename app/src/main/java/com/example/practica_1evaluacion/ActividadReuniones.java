@@ -25,34 +25,16 @@ public class ActividadReuniones extends AppCompatActivity {
 
         Button botonCrear = (Button) findViewById(R.id.botonCrearReunion);
         Button volverReunion = (Button) findViewById(R.id.botonVolverPantallaReuniones);
-        Button reunion1 = (Button) findViewById(R.id.botonReunion1);
-        reunion1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(ActividadReuniones.this);
-                builder.setTitle("Confirmación");
-                builder.setMessage("¿Desea asistir a la reunión?");
+        Button botonActualizar = (Button) findViewById(R.id.botonActualizarReuniones);
 
-                builder.setPositiveButton("CONFIRMAR", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        reunion1.setBackgroundColor(getResources().getColor(android.R.color.holo_green_light));
-                        reunion1.setTextColor(getResources().getColor(android.R.color.white));
-                    }
-                });
+        if(puestoRecogidoReuniones.equals("Docente")){
+            botonCrear.setEnabled(false);
+            botonCrear.setVisibility(View.INVISIBLE);
+        }
 
-                builder.setNegativeButton("RECHAZAR", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        reunion1.setBackgroundColor(getResources().getColor(android.R.color.holo_red_light));
-                        reunion1.setTextColor(getResources().getColor(android.R.color.white));
-                    }
-                });
 
-                AlertDialog dialog = builder.create();
-                dialog.show();
-            }
-        });
+
+
 
         volverReunion.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,6 +44,9 @@ public class ActividadReuniones extends AppCompatActivity {
                 startActivity(volverReuniones);
             }
         });
+
+
+
         //Botón para crear reunión.
         botonCrear.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -33,7 +33,7 @@
         android:orientation="vertical">
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textinput_nombreInicio"
+            android:id="@+id/textinput_CorreoInicio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
@@ -45,10 +45,10 @@
             app:boxCornerRadiusTopStart="40dp"
             app:counterMaxLength="30"
             app:counterEnabled="true"
-            app:helperText="Nombre y apellido"
-            android:hint="NOMBRE">
+            app:helperText="Correo"
+            android:hint="CORREO">
             <EditText
-                android:id="@+id/textoNombreInicioSesion"
+                android:id="@+id/textoCorreoInicioSesion"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:inputType="text">

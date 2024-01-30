@@ -25,16 +25,7 @@ public class ActividadPaginaInicioSesion extends AppCompatActivity {
 
         Button botonVolverInicioSesion = (Button) findViewById(R.id.botonVolverPantallaInicio);
         Button iniciarSesion = (Button) findViewById(R.id.botonCompletarInicio);
-        String nombre1;
-        String contraseña1;
-        String puestoDeTrabajo1;
-        String nombre2;
-        String contraseña2;
-        String puestoDeTrabajo2;
-        String nombre3;
-        String contraseña3;
-        String puestoDeTrabajo3;
-        EditText textoName = (EditText) findViewById(R.id.textoNombreInicioSesion);
+        EditText textoMail = (EditText) findViewById(R.id.textoCorreoInicioSesion);
         EditText textoPasswd = (EditText) findViewById(R.id.textoContrasenyaInicioSesion);
         TextView textoOculto = (TextView) findViewById(R.id.textoErrorInicio);
         RadioGroup opcionesPuestoInicio = findViewById(R.id.SelectorPuestoTrabajoInicio);
@@ -52,90 +43,11 @@ public class ActividadPaginaInicioSesion extends AppCompatActivity {
             }
         });
 
-        //Datos para comprobar el inicio de sesion.
-
-        nombre1="Pablo";
-        contraseña1="1234";
-        puestoDeTrabajo1="Docente";
-
-        nombre2="Juan";
-        contraseña2="4321";
-        puestoDeTrabajo2="Jefe de estudios";
-
-        nombre3="Santiago";
-        contraseña3="2143";
-        puestoDeTrabajo3="Coordinador";
-
-
-
-       opcionInicioDocente.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-               opcionSeleccionada="Docente";
-           }
-       });
-
-       opcionInicioCoordinador.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-               opcionSeleccionada="Coordinador";
-           }
-       });
-
-       opcionInicioJefeEstudios.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-               opcionSeleccionada="Jefe de estudios";
-           }
-       });
-
-        iniciarSesion.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String name= textoName.getText().toString();
-                String passwd= textoPasswd.getText().toString();
-                Intent pasarAlMenu;
-                Bundle datosUsuario;
-
-                if(name.equals(nombre1)&& passwd.equals(contraseña1) && opcionSeleccionada.equals(puestoDeTrabajo1)) {
-                    pasarAlMenu = new Intent(ActividadPaginaInicioSesion.this, ActividadMenuUsuario.class);
-                    datosUsuario = new Bundle();
-                    datosUsuario.putString("Nombre", name);
-                    datosUsuario.putString("Contraseña",passwd);
-                    datosUsuario.putString("Trabajo",opcionSeleccionada);
-                    pasarAlMenu.putExtras(datosUsuario);
-                    startActivity(pasarAlMenu);
-                }else if(name.equals(nombre2)&& passwd.equals(contraseña2) && opcionSeleccionada.equals(puestoDeTrabajo2)){
-                    pasarAlMenu = new Intent(ActividadPaginaInicioSesion.this, ActividadMenuUsuario.class);
-                    datosUsuario = new Bundle();
-                    datosUsuario.putString("Nombre", name);
-                    datosUsuario.putString("Contraseña",passwd);
-                    datosUsuario.putString("Trabajo",opcionSeleccionada);
-                    pasarAlMenu.putExtras(datosUsuario);
-                    startActivity(pasarAlMenu);
-                }else if(name.equals(nombre3)&& passwd.equals(contraseña3) && opcionSeleccionada.equals(puestoDeTrabajo3)){
-                    pasarAlMenu = new Intent(ActividadPaginaInicioSesion.this, ActividadMenuUsuario.class);
-                    datosUsuario = new Bundle();
-                    datosUsuario.putString("Nombre", name);
-                    datosUsuario.putString("Contraseña",passwd);
-                    datosUsuario.putString("Trabajo",opcionSeleccionada);
-                    pasarAlMenu.putExtras(datosUsuario);
-                    startActivity(pasarAlMenu);
-                }else {
-                    textoOculto.setVisibility(View.VISIBLE);
-                    textoName.setText("");
-                    textoPasswd.setText("");
-                }
-
-
-            }
-        });
-
-
-
-
-
-
-        
     }
-}
+
+
+
+
+
+
+

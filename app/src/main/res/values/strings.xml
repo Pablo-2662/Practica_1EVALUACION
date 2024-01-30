@@ -61,6 +61,7 @@
     <string name="pistaContenidoMensaje">mensaje...</string>
     <string name="pistaInicioNombre">Nombre y apellido</string>
     <string name="sufijo_correo">mail.com</string>
+    <string name="textoActualizar">ACTUALIZAR</string>
 
 
 </resources>

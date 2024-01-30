@@ -73,11 +73,19 @@
         android:background="#96B6C5"
         android:gravity="center">
 
+
         <Button
             android:id="@+id/botonVolverPantallaReuniones"
             android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:backgroundTint="#FF8080"
             android:text="@string/textoVolver" />
+        <Button
+            android:id="@+id/botonActualizarReuniones"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#2196F3"
+            android:text="@string/textoActualizar" />
     </LinearLayout>
 </LinearLayout>
