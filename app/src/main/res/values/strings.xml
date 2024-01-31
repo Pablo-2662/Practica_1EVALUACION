@@ -5,8 +5,8 @@
     <string name="textobotonRegistro">Regístrate</string>
     <string name="textobotonInicioSesion">Inicia Sesión</string>
     <string name="tituloRegistro">Registro</string>
-    <string name="textoVolver">Volver</string>
-    <string name="textoCompletarRegistro">Hecho</string>
+    <string name="textoVolver">VOLVER</string>
+    <string name="textoCompletarRegistro">HECHO</string>
     <string name="tituloInicioSesion">Inicio de Sesion</string>
     <string name="textoCompletarInicio">ACCEDER</string>
     <string name="textoErrorInicioSesion">Los datos introducidos son incorrectos</string>
