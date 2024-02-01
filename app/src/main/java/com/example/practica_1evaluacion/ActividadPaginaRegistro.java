@@ -1,5 +1,6 @@
 package com.example.practica_1evaluacion;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -10,8 +11,11 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class ActividadPaginaRegistro extends AppCompatActivity {
 
@@ -47,8 +51,7 @@ public class ActividadPaginaRegistro extends AppCompatActivity {
             }
         });
 
-        //Intent IrPantallaInicioSesion = new Intent(ActividadPaginaRegistro.this, ActividadPaginaInicioSesion.class);
-        //startActivity(IrPantallaInicioSesion);
+
 
         botonHecho.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,31 +71,62 @@ public class ActividadPaginaRegistro extends AppCompatActivity {
                     puesto="JefeEstudios";
                 }
 
+                Bundle datosRegistro = new Bundle();
+                datosRegistro.putString("correo",correoUsuario);
+                datosRegistro.putString("nombre",nombreUsuario);
+                datosRegistro.putString("contrasena",contrasena);
+                datosRegistro.putString("tel",telefono);
+                datosRegistro.putString("puesto",puesto);
+
 
                 if(nombreUsuario.length()>30){
                     editText_nombre.setText("longitud no permitida");
-                    editText_nombre.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
+
                 }else{
                     if(correoUsuario.length()>30 || correoUsuario.contains(".")){
                         editText_correo.setText("Longitud no permitida / cambia el . por _");
-                        editText_correo.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
+
                     }else{
                         if(contrasena.length()>10){
                             editText_contrasena.setText("Longitud no permitida");
-                            editText_contrasena.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
+
                         }else{
                             if(telefono.length()>9){
                                 editText_telefono.setText("Longitud no permitida");
-                                editText_telefono.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
+
                             }else{
 
+                                final DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("usuario");
+                                String finalPuesto = puesto;
+                                databaseReference.child(correoUsuario).addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                        if (dataSnapshot.exists()) {
+                                            // El correo electrónico ya existe en la base de datos
+                                            Snackbar.make(findViewById(R.id.layout_registro), "El usuario ya está en uso. Inicia sesión.", Snackbar.LENGTH_SHORT).show();
+                                        } else {
+                                            // El correo electrónico no existe en la base de datos, se puede registrar el usuario
+                                            Usuario u = new Usuario(correoUsuario, nombreUsuario, contrasena, telefono, finalPuesto);
+                                            databaseReference.child(correoUsuario).setValue(u);
+                                            Snackbar.make(findViewById(R.id.layout_registro), "Registrado!!!", Snackbar.LENGTH_INDEFINITE)
+                                                    .setAction("Aceptar", new View.OnClickListener() {
+                                                        @Override
+                                                        public void onClick(View v) {
+                                                            Intent IrPantallaInicioSesion = new Intent(ActividadPaginaRegistro.this, ActividadPaginaInicioSesion.class);
+                                                            IrPantallaInicioSesion.putExtras(datosRegistro);
+                                                            startActivity(IrPantallaInicioSesion);
+                                                        }
+                                                    })
+                                                    .show();
+                                        }
+                                    }
 
-                                Usuario u = new Usuario(correoUsuario, nombreUsuario, contrasena, telefono, puesto);
-                                DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
-                                DatabaseReference usuariosReference = databaseReference.child("usuario");
+                                    @Override
+                                    public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                                usuariosReference.child(correoUsuario).setValue(u);
-                                Snackbar.make(findViewById(R.id.layout_registro), "Registrado", Snackbar.LENGTH_SHORT);
+                                    }
+                                });
+
                             }
                         }
                     }

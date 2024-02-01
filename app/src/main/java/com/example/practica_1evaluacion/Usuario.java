@@ -21,6 +21,11 @@ public class Usuario implements Serializable {
         this.puesto = puesto;
     }
 
+    public Usuario(String email, String contrasena, String puesto) {
+        this.email = email;
+        this.contrasena = contrasena;
+        this.puesto = puesto;
+    }
 
     public String getEmail() {
         return email;

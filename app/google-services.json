@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "417590222946",
+    "firebase_url": "https://bbddeduplanner-default-rtdb.europe-west1.firebasedatabase.app",
     "project_id": "bbddeduplanner",
     "storage_bucket": "bbddeduplanner.appspot.com"
   },
