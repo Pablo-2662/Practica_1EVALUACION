@@ -47,6 +47,12 @@ public class ActividadPaginaInicioSesion extends AppCompatActivity {
 
 
 
+
+
+
+
+
+
         botonVolverInicioSesion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -80,7 +86,10 @@ public class ActividadPaginaInicioSesion extends AppCompatActivity {
                             Usuario usuario = dataSnapshot.getValue(Usuario.class);
                             if (usuario != null && usuario.getContrasena().equals(contrasena)) {
                                 // Contraseña correcta, pasar a la siguiente actividad
+                                Bundle datosEnviados = new Bundle();
+                                datosEnviados.putString("correo",correo);
                                 Intent intent = new Intent(ActividadPaginaInicioSesion.this, ActividadMenuUsuario.class);
+                                intent.putExtras(datosEnviados);
                                 startActivity(intent);
                             } else {
                                 // Contraseña incorrecta

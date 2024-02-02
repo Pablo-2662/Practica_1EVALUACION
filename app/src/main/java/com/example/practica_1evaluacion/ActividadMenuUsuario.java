@@ -1,19 +1,26 @@
 package com.example.practica_1evaluacion;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
 import android.telephony.TelephonyCallback;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
+
 public class ActividadMenuUsuario extends AppCompatActivity {
-
-
 
 
     @Override
@@ -22,22 +29,51 @@ public class ActividadMenuUsuario extends AppCompatActivity {
         setContentView(R.layout.activity_actividad_menu_usuario);
 
 
-
-        TextView nombreBienvenida = (TextView) findViewById(R.id.nombreSaludo);
-        ImageButton botonPerfil = (ImageButton) findViewById(R.id.botonPerfil);
-        String nombreRecogido="";
-        String contraseñaRecogida="";
-
-
-
-        //Recogemos el Bundle de la actividad de inicio de sesion
+        //RECOGEMOS EL BUNDLE
         Intent intent = getIntent();
         Bundle datosUsuarioRecogidos = intent.getExtras();
+        String correoRecogido = datosUsuarioRecogidos.getString("correo");
 
-        nombreRecogido = datosUsuarioRecogidos.getString("Nombre");
-        contraseñaRecogida = datosUsuarioRecogidos.getString("Contraseña");
-        nombreBienvenida.setText(nombreRecogido.toUpperCase());
 
+        //DEFINICIÓN DE ELEMENTOS
+        TextView nombreBienvenida = (TextView) findViewById(R.id.nombreSaludo);
+        ImageButton botonPerfil = (ImageButton) findViewById(R.id.botonPerfil);
+
+
+        System.out.println("Correo: "+correoRecogido);
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("usuario");
+        Query query = databaseReference.orderByChild("correo").equalTo(correoRecogido);
+
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                int count = (int) snapshot.getChildrenCount();
+                System.out.println("Numero registros: "+count);
+                Log.i("entra a la funcion","entra");
+                if (snapshot.exists()) {
+                    for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                        Log.i("entra a la funcion","entra2");
+                        Usuario usuario = dataSnapshot.getValue(Usuario.class);
+                        String nombre = usuario.getNombre();
+                        nombreBienvenida.setText(nombre);
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+}
+
+
+
+
+
+/*
 
         //Boton ir al perfil
         botonPerfil.setOnClickListener(new View.OnClickListener() {
@@ -132,3 +168,5 @@ public class ActividadMenuUsuario extends AppCompatActivity {
 
     }
 }
+
+*/

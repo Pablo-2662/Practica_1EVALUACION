@@ -71,12 +71,7 @@ public class ActividadPaginaRegistro extends AppCompatActivity {
                     puesto="JefeEstudios";
                 }
 
-                Bundle datosRegistro = new Bundle();
-                datosRegistro.putString("correo",correoUsuario);
-                datosRegistro.putString("nombre",nombreUsuario);
-                datosRegistro.putString("contrasena",contrasena);
-                datosRegistro.putString("tel",telefono);
-                datosRegistro.putString("puesto",puesto);
+
 
 
                 if(nombreUsuario.length()>30){
@@ -113,7 +108,6 @@ public class ActividadPaginaRegistro extends AppCompatActivity {
                                                         @Override
                                                         public void onClick(View v) {
                                                             Intent IrPantallaInicioSesion = new Intent(ActividadPaginaRegistro.this, ActividadPaginaInicioSesion.class);
-                                                            IrPantallaInicioSesion.putExtras(datosRegistro);
                                                             startActivity(IrPantallaInicioSesion);
                                                         }
                                                     })
