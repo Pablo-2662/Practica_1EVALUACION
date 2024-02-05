@@ -40,22 +40,17 @@ public class ActividadMenuUsuario extends AppCompatActivity {
         ImageButton botonPerfil = (ImageButton) findViewById(R.id.botonPerfil);
 
 
-        System.out.println("Correo: "+correoRecogido);
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("usuario");
-        Query query = databaseReference.orderByChild("correo").equalTo(correoRecogido);
+        Query query = databaseReference.orderByChild("email").equalTo(correoRecogido);
 
         query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                int count = (int) snapshot.getChildrenCount();
-                System.out.println("Numero registros: "+count);
-                Log.i("entra a la funcion","entra");
                 if (snapshot.exists()) {
                     for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                        Log.i("entra a la funcion","entra2");
                         Usuario usuario = dataSnapshot.getValue(Usuario.class);
                         String nombre = usuario.getNombre();
-                        nombreBienvenida.setText(nombre);
+                        nombreBienvenida.setText(nombre+"º");
                     }
                 }
             }
