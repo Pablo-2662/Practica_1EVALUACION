@@ -1,5 +1,6 @@
 package com.example.practica_1evaluacion;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
@@ -8,6 +9,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 
 public class ActividadReuniones extends AppCompatActivity {
@@ -27,14 +34,42 @@ public class ActividadReuniones extends AppCompatActivity {
         Button volverReunion = (Button) findViewById(R.id.botonVolverPantallaReuniones);
         Button botonActualizar = (Button) findViewById(R.id.botonActualizarReuniones);
 
-        if(puestoRecogidoReuniones.equals("Docente")){
-            botonCrear.setEnabled(false);
-            botonCrear.setVisibility(View.INVISIBLE);
-        }
+        Intent intent = getIntent();
+        Bundle datosUsuarioRecogidos = intent.getExtras();
+        String correoRecogido = datosUsuarioRecogidos.getString("correo");
+
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("usuario");
+        Query query = databaseReference.orderByChild("email").equalTo(correoRecogido);
+
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+                    for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                        Usuario usuario = dataSnapshot.getValue(Usuario.class);
+                        String puesto = usuario.getPuesto();
+                        if(puesto.equals("Docente")){
+
+                        }else if(puesto.equals("JefeEstudios")){
+
+                        }else if(puesto.equals("Coordinador")){
+
+                        }
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
 
 
 
+
+/*
 
         volverReunion.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,6 +104,9 @@ public class ActividadReuniones extends AppCompatActivity {
 
 
 
+
+    }
+    */
 
     }
 }

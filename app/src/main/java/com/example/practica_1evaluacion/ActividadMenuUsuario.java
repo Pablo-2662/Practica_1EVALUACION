@@ -38,6 +38,8 @@ public class ActividadMenuUsuario extends AppCompatActivity {
         //DEFINICIÓN DE ELEMENTOS
         TextView nombreBienvenida = (TextView) findViewById(R.id.nombreSaludo);
         ImageButton botonPerfil = (ImageButton) findViewById(R.id.botonPerfil);
+        Button botonActividadReuniones =(Button) findViewById(R.id.botonActividadReuniones);
+
 
 
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("usuario");
@@ -69,6 +71,15 @@ public class ActividadMenuUsuario extends AppCompatActivity {
                 Intent intent_perfil = new Intent(ActividadMenuUsuario.this, ActividadPerfil.class);
                 intent_perfil.putExtras(datosUsuarioRecogidos);
                 startActivity(intent_perfil);
+            }
+        });
+
+        botonActividadReuniones.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent2 = new Intent(ActividadMenuUsuario.this, ActividadReuniones.class);
+                intent2.putExtras(datosUsuarioRecogidos);
+                startActivity(intent2);
             }
         });
     }
