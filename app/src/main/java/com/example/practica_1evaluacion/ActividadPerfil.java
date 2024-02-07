@@ -62,6 +62,7 @@ public class ActividadPerfil extends AppCompatActivity {
                         datosContrasena.setText(pass);
                         datosTelefono.setText(telefono);
                         datosCorreo.setText(correoRecogido);
+                        //
                     }
                 }
             }
