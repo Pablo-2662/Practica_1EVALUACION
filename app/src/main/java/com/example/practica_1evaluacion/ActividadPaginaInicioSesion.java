@@ -61,8 +61,8 @@ public class ActividadPaginaInicioSesion extends AppCompatActivity {
         iniciarSesion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final String correo = textoMail.getText().toString();
-                final String contrasena = textoPasswd.getText().toString();
+                String correo = textoMail.getText().toString();
+                String contrasena = textoPasswd.getText().toString();
                 String puesto = "";
 
                 if (opcionInicioDocente.isChecked()) {

@@ -49,6 +49,9 @@
             android:name=".ActividadHorario"
             android:exported="false" />
         <activity
+            android:name=".ActividadEditarPerfil"
+            android:exported="false" />
+        <activity
             android:name=".ActividadPerfil"
             android:exported="false" />
         <activity
