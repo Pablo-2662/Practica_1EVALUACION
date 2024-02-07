@@ -65,16 +65,16 @@
             />
 
         <TextView
-            android:id="@+id/etiquetaPuesto"
+            android:id="@+id/etiquetaContrasena"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Puesto:"
+            android:text="Contraseña:"
             android:textSize="24sp"
             android:textColor="#333333"
             android:paddingBottom="8dp" />
 
         <EditText
-            android:id="@+id/datoPuesto"
+            android:id="@+id/datoContrasena"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="24sp"
@@ -134,27 +134,40 @@
         android:background="#8DDFCB"
         android:gravity="center">
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/botonVolverPantallaPerfil"
-            android:layout_width="120dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="#FF8080"
+            style="@style/Widget.Material3.Button.ElevatedButton"
+            android:textColor="@color/white"
+            android:textSize="20dp"
             android:text="@string/textoVolver"
-            android:layout_marginRight="30dp"></Button>
-        <Button
+            android:layout_marginRight="15dp">
+        </com.google.android.material.button.MaterialButton>
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/botonEditarPerfil"
             android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:backgroundTint="#2196F3"
+            style="@style/Widget.Material3.Button.ElevatedButton"
+            android:textColor="@color/white"
+            android:textSize="20dp"
             android:text="@string/editar"
-            android:layout_marginRight="30dp"
-            tools:ignore="DuplicateIds"></Button>
-        <Button
+            android:layout_marginRight="15dp"
+            tools:ignore="DuplicateIds"></com.google.android.material.button.MaterialButton>
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/botonConfirmarEdiccion"
             android:layout_width="120dp"
             android:layout_height="wrap_content"
+            style="@style/Widget.Material3.Button.ElevatedButton"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+
             android:backgroundTint="#2196F3"
             android:text="HECHO"
-            tools:ignore="DuplicateIds"></Button>
+            tools:ignore="DuplicateIds">
+
+        </com.google.android.material.button.MaterialButton>
     </LinearLayout>
 </LinearLayout>

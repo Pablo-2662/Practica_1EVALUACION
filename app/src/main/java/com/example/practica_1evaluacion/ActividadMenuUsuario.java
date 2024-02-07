@@ -50,7 +50,7 @@ public class ActividadMenuUsuario extends AppCompatActivity {
                     for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                         Usuario usuario = dataSnapshot.getValue(Usuario.class);
                         String nombre = usuario.getNombre();
-                        nombreBienvenida.setText(nombre+"º");
+                        nombreBienvenida.setText(nombre+"");
                     }
                 }
             }
@@ -58,6 +58,17 @@ public class ActividadMenuUsuario extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
+            }
+        });
+
+
+
+        botonPerfil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent_perfil = new Intent(ActividadMenuUsuario.this, ActividadPerfil.class);
+                intent_perfil.putExtras(datosUsuarioRecogidos);
+                startActivity(intent_perfil);
             }
         });
     }
@@ -68,17 +79,13 @@ public class ActividadMenuUsuario extends AppCompatActivity {
 
 
 
-/*
 
-        //Boton ir al perfil
-        botonPerfil.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent pasarActividadPerfil = new Intent(ActividadMenuUsuario.this, ActividadPerfil.class);
-                pasarActividadPerfil.putExtras(datosUsuarioRecogidos);
-                startActivity(pasarActividadPerfil);
-            }
-        });
+
+
+
+
+
+        /*
         //Botón ir al horario
         Button botonHorario = (Button) findViewById(R.id.botonActividadHorario);
         botonHorario.setOnClickListener(new View.OnClickListener() {
