@@ -4,7 +4,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -24,6 +28,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ActividadPerfil extends AppCompatActivity {
+
+    SQLiteDatabase database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,6 +90,7 @@ public class ActividadPerfil extends AppCompatActivity {
                 startActivity(volverActividadPerfil);
             }
         });
+
         editarPerfil = (MaterialButton) findViewById(R.id.botonEditarPerfil);
         editarPerfil.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,7 +99,28 @@ public class ActividadPerfil extends AppCompatActivity {
                 datosContrasena.setEnabled(true);
                 datosTelefono.setEnabled(true);
 
+                SQLHelperUsuario helperUsuario = new SQLHelperUsuario(v.getContext(),"bbdd_ususarios",null,1);
+                database = helperUsuario.getWritableDatabase();
 
+                String correo = datosCorreo.getText().toString();
+                String nombre = datosNombre.getText().toString();
+                String contrasena = datosContrasena.getText().toString();
+                String telefono = datosTelefono.getText().toString();
+
+                // Consultar si ya existe un registro con el mismo correo
+                Cursor cursor = database.rawQuery("SELECT correo FROM Usuario WHERE correo = ?", new String[]{correo});
+                if (cursor.getCount() > 0) {
+
+                } else {
+                    // No hay ningún registro con el mismo correo, proceder con la inserción
+                    ContentValues contentValues = new ContentValues();
+                    contentValues.put("correo", correo);
+                    contentValues.put("nombre", nombre);
+                    contentValues.put("contrasena", contrasena);
+                    contentValues.put("telefono", telefono);
+                    database.insert("Usuario", null, contentValues);
+                }
+                cursor.close();
             }
         });
 
@@ -108,7 +136,8 @@ public class ActividadPerfil extends AppCompatActivity {
                 String nombre, contrasena, telefono;
                 nombre = datosNombre.getText().toString();
                 contrasena = datosContrasena.getText().toString();
-                telefono = datosNombre.getText().toString();
+                telefono = datosTelefono.getText().toString();
+                String correo = datosCorreo.getText().toString();
 
 
                 DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("usuario");
@@ -128,8 +157,6 @@ public class ActividadPerfil extends AppCompatActivity {
                                 databaseReference.child(clavePrimaria).updateChildren(actualizacionMap);
                                 Snackbar snackbar = Snackbar.make(v,"Perfil Actualizado",Snackbar.LENGTH_SHORT);
                                 snackbar.show();
-
-
                             }
                         }
                     }
@@ -140,8 +167,15 @@ public class ActividadPerfil extends AppCompatActivity {
                     }
                 });
 
+                SQLHelperUsuario helperUsuario = new SQLHelperUsuario(v.getContext(),"bbdd_usuarios",null,1);
+                database = helperUsuario.getWritableDatabase();
 
-
+                ContentValues contentValues = new ContentValues();
+                contentValues.put("correo", correo);
+                contentValues.put("nombre", nombre);
+                contentValues.put("contrasena", contrasena);
+                contentValues.put("telefono", telefono);
+                database.update("Usuario",contentValues,"correo=?",new String[]{correoRecogido});
 
             }
         });

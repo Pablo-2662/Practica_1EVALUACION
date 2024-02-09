@@ -24,11 +24,6 @@ public class ActividadReuniones extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_actividad_reuniones);
 
-        Intent intent2 = getIntent();
-        Bundle datosRecogidosReuniones = intent2.getExtras();
-        String nombreRecogidoReuniones = datosRecogidosReuniones.getString("Nombre");
-        String puestoRecogidoReuniones = datosRecogidosReuniones.getString("Trabajo");
-
 
         Button botonCrear = (Button) findViewById(R.id.botonCrearReunion);
         Button volverReunion = (Button) findViewById(R.id.botonVolverPantallaReuniones);
@@ -47,8 +42,16 @@ public class ActividadReuniones extends AppCompatActivity {
                 if (snapshot.exists()) {
                     for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                         Usuario usuario = dataSnapshot.getValue(Usuario.class);
-                        String puesto = usuario.getPuesto();
+                        String puesto="";
+
+                        if (usuario != null) {
+                            puesto = usuario.getPuesto();
+                            // Resto del código
+                        }
+                        System.out.println("PUESTO EXTRAIDO "+puesto);
                         if(puesto.equals("Docente")){
+                            botonCrear.setVisibility(View.INVISIBLE);
+                            botonCrear.setEnabled(false);
 
                         }else if(puesto.equals("JefeEstudios")){
 
