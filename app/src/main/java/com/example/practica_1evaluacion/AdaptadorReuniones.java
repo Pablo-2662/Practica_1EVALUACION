@@ -13,13 +13,17 @@ import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
 
-public class AdaptadorReuniones extends ArrayAdapter<Reunion> {
+public class    AdaptadorReuniones extends ArrayAdapter<Reunion> {
 
     private ArrayList<Reunion> lista;
+    private Context contexto;
+    private int layoutPersonalizado;
 
-    public AdaptadorReuniones(@NonNull Context context, int design_reuniones, @NonNull ArrayList<Reunion> reuniones) {
-        super(context, design_reuniones, reuniones);
+    public AdaptadorReuniones(@NonNull Context context, int resources, @NonNull ArrayList<Reunion> reuniones) {
+        super(context, resources, reuniones);
         this.lista = reuniones;
+        this.contexto = context;
+        this.layoutPersonalizado = resources;
     }
 
     @NonNull
@@ -32,7 +36,7 @@ public class AdaptadorReuniones extends ArrayAdapter<Reunion> {
         }
 
         // Obtener la reunión en la posición actual
-        Reunion reunion = getItem(position);
+        Reunion reunion = lista.get(position);
 
         // Obtener las vistas del diseño
         TextView textViewAsunto = vista.findViewById(R.id.textoAsunto_reunion);

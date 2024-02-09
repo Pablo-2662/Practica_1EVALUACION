@@ -8,17 +8,21 @@ public class Reunion implements Serializable {
     private String asunto;
     private boolean asistencia;
 
-    public Reunion(){
+    private String correoUsuario;
 
-    }
-
-    public Reunion(int id, String fecha, String hora, String asunto, boolean asistencia) {
+    public Reunion(String idReunion, String fecha, String hora, String asunto, boolean asistencia, String correoUsuario){
         this.id = id;
         this.fecha = fecha;
         this.hora = hora;
         this.asunto = asunto;
         this.asistencia = asistencia;
+        this.correoUsuario = correoUsuario;
+
     }
+    public Reunion(){
+
+    }
+
 
     public int getId() {
         return id;
@@ -58,5 +62,13 @@ public class Reunion implements Serializable {
 
     public void setAsistencia(boolean asistencia) {
         this.asistencia = asistencia;
+    }
+
+    public String getCorreoUsuario() {
+        return correoUsuario;
+    }
+
+    public void setCorreoUsuario(String correoUsuario) {
+        this.correoUsuario = correoUsuario;
     }
 }

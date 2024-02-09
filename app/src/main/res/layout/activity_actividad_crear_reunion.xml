@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ActividadCrearReunion">
+
 
     <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        tools:context=".ActividadCrearReunion"
         android:orientation="vertical"
-        android:background="#BEADFA">
+        android:background="@drawable/backgroundcrearreunion">
 
-        <!-- Título -->
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -31,73 +29,149 @@
             </TextView>
         </LinearLayout>
 
-        <!-- Asunto -->
-        <EditText
-            android:id="@+id/textoAsunto"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dp"
+        android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textinput_asuntoReunion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Asunto de la reunión"
-            android:layout_margin="20dp">
-        </EditText>
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
+            app:boxCornerRadiusBottomEnd="40dp"
+            app:boxCornerRadiusBottomStart="40dp"
+            app:endIconMode="clear_text"
+            app:boxCornerRadiusTopEnd="40dp"
+            app:boxCornerRadiusTopStart="40dp"
+            app:counterMaxLength="30"
+            app:counterEnabled="true"
+            app:helperText="Descripción breve de la reunión"
+            android:hint="ASUNTO">
+            <EditText
+                android:id="@+id/edittext_asunto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="text">
+            </EditText>
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- CalendarView para Fecha -->
-        <CalendarView
-            android:id="@+id/calendario"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp">
-        </CalendarView>
 
-        <!-- TimePicker para Hora -->
-        <TimePicker
-            android:id="@+id/eleccionHora"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp">
-        </TimePicker>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:orientation="horizontal">
 
-        <!-- EditText para Participantes -->
-        <EditText
-            android:id="@+id/textoParticipantes"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Añadir participantes a la reunión"
-            android:layout_margin="20dp">
-        </EditText>
-
-        <!-- Botones y elementos relacionados -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_margin="20dp">
-
-            <Button
-                android:id="@+id/botonCrearConfirmar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:backgroundTint="#8EACCD"
-                android:layout_marginRight="20dp"
-                android:text="@string/textoCrear">
-            </Button>
-
-            <Button
-                android:id="@+id/botonEnviarReunion"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:backgroundTint="#8EACCD"
-                android:layout_marginRight="20dp"
-                android:text="@string/textoEnviar">
-            </Button>
-
-            <ImageButton
-                android:id="@+id/imagenEliminarReunión"
-                android:layout_width="111dp"
-                android:layout_height="54dp"
-                android:backgroundTint="#8EACCD"
-                android:scaleType="fitCenter"
-                android:src="@drawable/basura">
-            </ImageButton>
-        </LinearLayout>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/botonCalendario"
+            android:layout_width="150dp"
+            android:layout_marginLeft="20dp"
+            style="@style/Widget.Material3.Button.ElevatedButton"
+            android:textColor="@color/white"
+            android:backgroundTint="#D0BFFF"
+            android:textSize="20dp"
+            android:text="FECHA"
+            android:layout_height="wrap_content">
+        </com.google.android.material.button.MaterialButton>
+        <TextView
+            android:id="@+id/texto_fechaSeleccionada"
+            android:layout_width="180dp"
+            android:layout_marginLeft="20dp"
+            android:textSize="20dp"
+            android:layout_height="wrap_content">
+        </TextView>
     </LinearLayout>
-</ScrollView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/botonReloj"
+            android:layout_width="150dp"
+            android:layout_marginLeft="20dp"
+            style="@style/Widget.Material3.Button.ElevatedButton"
+            android:textColor="@color/white"
+            android:backgroundTint="#D0BFFF"
+            android:textSize="20dp"
+            android:text="HORA"
+            android:layout_height="wrap_content">
+        </com.google.android.material.button.MaterialButton>
+        <TextView
+            android:id="@+id/texto_horaSeleccionada"
+            android:layout_width="180dp"
+            android:layout_marginLeft="20dp"
+            android:textSize="20dp"
+            android:layout_height="wrap_content">
+        </TextView>
+    </LinearLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textinput_correoReunion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginBottom="90dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="30dp"
+            app:boxCornerRadiusBottomEnd="40dp"
+            app:boxCornerRadiusBottomStart="40dp"
+            app:endIconMode="clear_text"
+            app:boxCornerRadiusTopEnd="40dp"
+            app:boxCornerRadiusTopStart="40dp"
+            app:counterMaxLength="30"
+            app:counterEnabled="true"
+            app:helperText="Participante"
+            android:hint="PARTICIPANTE">
+            <EditText
+                android:id="@+id/edittext_correo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="text">
+            </EditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_margin="20dp">
+
+        <Button
+            android:id="@+id/botonCrearConfirmar"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            style="@style/Widget.Material3.Button.ElevatedButton"
+            android:textColor="@color/white"
+            android:backgroundTint="#D0BFFF"
+            android:textSize="20dp"
+            android:text="@string/textoCrear">
+        </Button>
+        <Button
+            android:id="@+id/botonBorrarReunion"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            style="@style/Widget.Material3.Button.ElevatedButton"
+            android:textColor="@color/white"
+            android:backgroundTint="#D0BFFF"
+            android:textSize="20dp"
+            android:text="BORRAR">
+        </Button>
+
+
+    </LinearLayout>
+
+      </LinearLayout>
+    </LinearLayout>
+
+
+
