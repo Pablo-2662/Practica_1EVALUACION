@@ -144,33 +144,7 @@ public class ActividadReuniones extends AppCompatActivity {
             }
         });
 
-/*
 
-        //Botón para crear reunión.
-        botonCrear.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(puestoRecogidoReuniones.equals("Coordinador") || puestoRecogidoReuniones.equals("Jefe de estudios")){
-                    Intent crearReunion = new Intent(ActividadReuniones.this, ActividadCrearReunion.class);
-                    crearReunion.putExtras(datosRecogidosReuniones);
-                    startActivity(crearReunion);
-
-                }else if(puestoRecogidoReuniones.equals("Docente")){
-                    AlertDialog.Builder permitido = new AlertDialog.Builder(ActividadReuniones.this);
-                    permitido.setTitle("PERMISOS");
-                    permitido.setMessage("NO TIENES PERMITIDA ESTA OPCIÓN");
-                    AlertDialog dialog2 = permitido.create();
-                    dialog2.show();
-
-                }
-            }
-        });
-
-
-
-
-    }
-    */
 
     }
 }

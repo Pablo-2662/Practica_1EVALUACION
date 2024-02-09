@@ -82,6 +82,16 @@ public class ActividadMenuUsuario extends AppCompatActivity {
                 startActivity(intent2);
             }
         });
+
+        Button botonHorario = (Button) findViewById(R.id.botonActividadHorario);
+        botonHorario.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentHorario = new Intent(ActividadMenuUsuario.this, ActividadHorario.class);
+                intentHorario.putExtras(datosUsuarioRecogidos);
+                startActivity(intentHorario);
+            }
+        });
     }
 
 }
@@ -96,18 +106,10 @@ public class ActividadMenuUsuario extends AppCompatActivity {
 
 
 
-        /*
-        //Botón ir al horario
-        Button botonHorario = (Button) findViewById(R.id.botonActividadHorario);
-        botonHorario.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent actividadHorario = new Intent(ActividadMenuUsuario.this, ActividadHorario.class);
-                actividadHorario.putExtras(datosUsuarioRecogidos);
-                startActivity(actividadHorario);
-            }
-        });
 
+
+
+        /*
         //Botón ir a reuniones
         Button botonActividadReuniones =(Button) findViewById(R.id.botonActividadReuniones);
         botonActividadReuniones.setOnClickListener(new View.OnClickListener() {
