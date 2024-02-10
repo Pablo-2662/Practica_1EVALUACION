@@ -14,7 +14,6 @@
             android:gravity="center_vertical"
             android:layout_marginLeft="40dp"
             android:textSize="35sp"
-            android:background="@drawable/horarios"
             android:textColor="@color/black"
             android:textStyle="bold"
             android:padding="16dp"
@@ -32,7 +31,7 @@
         android:layout_weight="1"
         android:gravity="center"
         android:orientation="vertical"
-        android:background="">
+        android:background="@color/white">
 
         <HorizontalScrollView
         android:layout_width="match_parent"

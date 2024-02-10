@@ -7,44 +7,54 @@
     android:layout_height="match_parent"
     tools:context=".ActividadAusenciasJefe"
     android:orientation="vertical"
-    android:background="#A2C579">
+    android:background="#D98880">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="3.5"
-        android:background="#D2DE32">
+        android:layout_weight="4.5"
+        android:background="#943126">
         <TextView
             android:id="@+id/tituloInformes"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:textStyle="bold"
             android:text="@string/tituloAusencias"
             android:gravity="center"
             android:textSize="30dp"
-            android:textColor="@color/cardview_dark_background">
+            android:textColor="@color/white">
 
         </TextView>
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1.5"
-        android:background="@color/white">
-        <Button
-            android:layout_marginTop="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#016A70"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:text="@string/informePrueba">
 
-        </Button>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+    <LinearLayout
+        android:id="@+id/layoutscrolleableAu"
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:background="@color/white">
+
+        <ListView
+            android:id="@+id/listaAusencias"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </ListView>
+
     </LinearLayout>
+    </ScrollView>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="4"
+        android:layout_weight="4.5"
+        android:orientation="horizontal"
+        android:background="#943126"
         android:layout_gravity="center">
 
         <Button
@@ -53,20 +63,29 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
-            android:layout_marginLeft="100dp"
-            android:backgroundTint="#016A70"
+            style="@style/Widget.Material3.Button.ElevatedButton"
+            android:textSize="20dp"
+            android:textColor="@color/white"
+            android:layout_marginLeft="50dp"
+            android:backgroundTint="#D98880"
             android:text="@string/textoVolver">
         </Button>
+
         <Button
-            android:id="@+id/botonAñadirInforme"
+            android:id="@+id/botonActualizarAusencias"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
-            android:layout_marginLeft="20dp"
-            android:backgroundTint="#016A70"
-            android:text="@string/textoAñadirInforme">
+            style="@style/Widget.Material3.Button.ElevatedButton"
+            android:textSize="20dp"
+            android:textColor="@color/white"
+            android:layout_marginLeft="10dp"
+            android:backgroundTint="#D98880"
+            android:text="ACTUALIZAR">
         </Button>
+
+
     </LinearLayout>
 
 </LinearLayout>

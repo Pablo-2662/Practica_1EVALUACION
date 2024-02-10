@@ -46,7 +46,6 @@ public class ActividadCrearReunion extends AppCompatActivity {
                 int mes = calendar.get(Calendar.MONTH);
                 int dia = calendar.get(Calendar.DAY_OF_MONTH);
 
-
                 DatePickerDialog dpd = new DatePickerDialog(ActividadCrearReunion.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
@@ -115,6 +114,17 @@ public class ActividadCrearReunion extends AppCompatActivity {
                         .show();
 
 
+            }
+        });
+
+        Button borrar = (Button) findViewById(R.id.botonBorrarReunion);
+        borrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                texto_fechaSeleccionada.setText("");
+                texto_horaSeleccionada.setText("");
+                edit_asunto.setText("");
+                editText_participante.setText("");
             }
         });
 

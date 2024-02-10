@@ -1,88 +1,166 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".ActividadAusenciasNotificar"
     android:orientation="vertical"
-    tools:context=".ActividadAusenciasNotificar">
+    android:background="@drawable/fondoausencia">
+
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="3.5"
-        android:layout_gravity="center"
-        android:background="#363062"
-        >
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        android:layout_marginTop="20dp">
+
         <TextView
-            android:id="@+id/tituloAusencia"
+            android:id="@+id/tituloCrearReunion"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:text="NUEVA AUSENCIA"
             android:gravity="center"
-            android:textSize="30dp"
-            android:text="@string/tituloNotificarAusencia"
-            android:textColor="@color/white">
+            android:textColor="@color/white"
+            android:textSize="30dp">
         </TextView>
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1.5"
-        android:orientation="vertical"
-        >
-        <MultiAutoCompleteTextView
-            android:id="@+id/causasDeAusencia"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Ingrese el motivo de la ausencia"
-            android:textColor="@color/black" />
-
-        <CalendarView
-            android:id="@+id/calendarioAusencia"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <EditText
-            android:id="@+id/textoComentarios"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Agregar comentarios (detalles, horas de ausencia)"
-            android:textColor="@color/black" />
-    </LinearLayout>
-
-
-
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="3.5"
-        android:background="#363062"
-        android:layout_gravity="center"
-        android:orientation="vertical"
-        >
+        android:layout_marginTop="60dp"
+        android:orientation="vertical">
 
-        <Button
-            android:id="@+id/botonVolverPantallaInformarAusencia"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textinput_correoJefe"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="60dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="60dp"
-            android:backgroundTint="#8eb6ed"
-            android:text="@string/textoVolver"></Button>
-        <Button
-            android:id="@+id/botonNotificarAusencia"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
+            app:boxCornerRadiusBottomEnd="40dp"
+            app:boxCornerRadiusBottomStart="40dp"
+            app:endIconMode="clear_text"
+            app:boxCornerRadiusTopEnd="40dp"
+            app:boxCornerRadiusTopStart="40dp"
+            app:counterTextColor="@color/white"
+            app:helperTextTextColor="@color/white"
+            app:counterMaxLength="30"
+            app:counterEnabled="true"
+            android:hint="DESTINATARIO">
+            <EditText
+                android:id="@+id/edittext_correoJefe"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="text">
+            </EditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="60dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="60dp"
-            android:backgroundTint="#8eb6ed"
-            android:text="@string/textoNotificarAusencia"></Button>
+            android:layout_marginTop="50dp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/botonCalendario"
+                android:layout_width="150dp"
+                android:layout_marginLeft="20dp"
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:textColor="@color/white"
+                android:backgroundTint="#5C6BC0"
+                android:textSize="20dp"
+                android:text="FECHA"
+                android:layout_height="wrap_content">
+            </com.google.android.material.button.MaterialButton>
+            <TextView
+                android:id="@+id/texto_fechaSeleccionada"
+                android:layout_width="180dp"
+                android:layout_marginLeft="20dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:layout_height="wrap_content">
+            </TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/botonReloj"
+                android:layout_width="150dp"
+                android:layout_marginLeft="20dp"
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:textColor="@color/white"
+                android:backgroundTint="#5C6BC0"
+                android:textSize="20dp"
+                android:text="HORA"
+                android:layout_height="wrap_content">
+            </com.google.android.material.button.MaterialButton>
+            <TextView
+                android:id="@+id/texto_horaSeleccionada"
+                android:layout_width="180dp"
+                android:layout_marginLeft="20dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:layout_marginBottom="150dp"
+                android:layout_height="wrap_content">
+            </TextView>
+        </LinearLayout>
+
+
+        <Spinner
+            android:id="@+id/spinerOpciones"
+            android:layout_width="200dp"
+            android:layout_marginTop="90dp"
+            android:layout_height="40dp"
+            android:spinnerMode="dialog"
+            android:background="@color/white"
+            android:layout_margin="20dp">
+        </Spinner>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_margin="20dp">
+
+            <Button
+                android:id="@+id/botonConfirmarAusencia"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:textColor="@color/white"
+                android:backgroundTint="#5C6BC0"
+                android:textSize="20dp"
+                android:text="ENVIAR">
+            </Button>
+            <Button
+                android:id="@+id/botonBorrarAusencia"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:textColor="@color/white"
+                android:backgroundTint="#5C6BC0"
+                android:textSize="20dp"
+                android:text="BORRAR">
+            </Button>
+
+
+        </LinearLayout>
+
     </LinearLayout>
-
-
-
 </LinearLayout>

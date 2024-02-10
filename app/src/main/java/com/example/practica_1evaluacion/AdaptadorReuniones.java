@@ -11,6 +11,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.google.android.material.snackbar.Snackbar;
+
 import java.util.ArrayList;
 
 public class    AdaptadorReuniones extends ArrayAdapter<Reunion> {
@@ -49,6 +51,7 @@ public class    AdaptadorReuniones extends ArrayAdapter<Reunion> {
         textViewFecha.setText(reunion.getFecha());
         textViewHora.setText(reunion.getHora());
         checkBoxAsistencia.setChecked(reunion.isAsistencia());
+        
 
         return vista;
     }

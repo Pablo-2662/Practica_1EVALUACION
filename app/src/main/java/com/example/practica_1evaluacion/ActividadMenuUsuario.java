@@ -92,6 +92,52 @@ public class ActividadMenuUsuario extends AppCompatActivity {
                 startActivity(intentHorario);
             }
         });
+
+        Button botonAusencias = (Button) findViewById(R.id.botonActividadAusencias);
+        botonAusencias.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+
+                DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("usuario");
+                Query query = databaseReference.orderByChild("email").equalTo(correoRecogido);
+
+                query.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if (snapshot.exists()) {
+                            for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                                Usuario usuario = dataSnapshot.getValue(Usuario.class);
+                                String puesto = usuario.getPuesto();
+                                if (puesto.equals("JefeEstudios")){
+                                    Intent intent = new Intent(ActividadMenuUsuario.this, ActividadAusenciasJefe.class);
+                                    intent.putExtras(datosUsuarioRecogidos);
+                                    startActivity(intent);
+                                }else{
+                                    Intent intent = new Intent(ActividadMenuUsuario.this, ActividadAusenciasNotificar.class);
+                                    intent.putExtras(datosUsuarioRecogidos);
+                                    startActivity(intent);
+                                }
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+
+
+
+
+                }
+
+        });
+
+
+
     }
 
 }
@@ -109,38 +155,15 @@ public class ActividadMenuUsuario extends AppCompatActivity {
 
 
 
-        /*
-        //Botón ir a reuniones
-        Button botonActividadReuniones =(Button) findViewById(R.id.botonActividadReuniones);
-        botonActividadReuniones.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent actividadReuniones = new Intent(ActividadMenuUsuario.this, ActividadReuniones.class);
-                actividadReuniones.putExtras(datosUsuarioRecogidos);
-                startActivity(actividadReuniones);
-            }
-        });
 
 
-        Button botonAusencias = (Button) findViewById(R.id.botonActividadAusencias);
-        botonAusencias.setOnClickListener(new View.OnClickListener() {
-            final String  puestoRecogido = datosUsuarioRecogidos.getString("Trabajo");
-            @Override
-            public void onClick(View v) {
-                if(puestoRecogido.equals("Jefe de estudios")){
-                    Intent actividadAusencias1 = new Intent(ActividadMenuUsuario.this, ActividadAusenciasJefe.class);
-                    actividadAusencias1.putExtras(datosUsuarioRecogidos);
-                    startActivity(actividadAusencias1);
-                }else if(puestoRecogido.equals("Coordinador") || (puestoRecogido.equals("Docente"))){
-                    Intent actividadAusencias2 = new Intent(ActividadMenuUsuario.this, ActividadAusenciasNotificar.class);
-                    actividadAusencias2.putExtras(datosUsuarioRecogidos);
-                    startActivity(actividadAusencias2);
-                }
-            }
-        });
+/*
 
 
-        Button botonTareas = (Button) findViewById(R.id.botonActividadTareas);
+
+
+
+Button botonTareas = (Button) findViewById(R.id.botonActividadTareas);
         botonTareas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

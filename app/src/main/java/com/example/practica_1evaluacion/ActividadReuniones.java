@@ -67,7 +67,6 @@ public class ActividadReuniones extends AppCompatActivity {
                             puesto = usuario.getPuesto();
                             // Resto del código
                         }
-                        System.out.println("PUESTO EXTRAIDO "+puesto);
                         if(puesto.equals("Docente")){
                             botonCrear.setVisibility(View.INVISIBLE);
                             botonCrear.setEnabled(false);

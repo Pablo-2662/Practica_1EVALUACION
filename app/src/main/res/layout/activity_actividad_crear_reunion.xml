@@ -9,7 +9,7 @@
         android:layout_height="match_parent"
         tools:context=".ActividadCrearReunion"
         android:orientation="vertical"
-        android:background="@drawable/backgroundcrearreunion">
+        android:background="@drawable/imagencrearreunion">
 
 
         <LinearLayout
@@ -47,6 +47,8 @@
             app:endIconMode="clear_text"
             app:boxCornerRadiusTopEnd="40dp"
             app:boxCornerRadiusTopStart="40dp"
+            app:counterTextColor="@color/white"
+            app:helperTextTextColor="@color/white"
             app:counterMaxLength="30"
             app:counterEnabled="true"
             app:helperText="Descripción breve de la reunión"
@@ -122,6 +124,8 @@
             android:layout_marginRight="30dp"
             app:boxCornerRadiusBottomEnd="40dp"
             app:boxCornerRadiusBottomStart="40dp"
+            app:helperTextTextColor="@color/white"
+            app:counterTextColor="@color/white"
             app:endIconMode="clear_text"
             app:boxCornerRadiusTopEnd="40dp"
             app:boxCornerRadiusTopStart="40dp"
