@@ -135,6 +135,16 @@ public class ActividadMenuUsuario extends AppCompatActivity {
                 }
 
         });
+        Button botonMensajes = (Button) findViewById(R.id.botonActividadMensajes);
+        botonMensajes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent actividadMensajes = new Intent(ActividadMenuUsuario.this, ActividadMensajes.class);
+                actividadMensajes.putExtras(datosUsuarioRecogidos);
+                startActivity(actividadMensajes);
+            }
+        });
+
 
 
 
@@ -192,15 +202,7 @@ Button botonTareas = (Button) findViewById(R.id.botonActividadTareas);
         });
 
 
-        Button botonMensajes = (Button) findViewById(R.id.botonActividadMensajes);
-        botonMensajes.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent actividadMensajes = new Intent(ActividadMenuUsuario.this, ActividadMensajes.class);
-                actividadMensajes.putExtras(datosUsuarioRecogidos);
-                startActivity(actividadMensajes);
-            }
-        });
+
 
 
 

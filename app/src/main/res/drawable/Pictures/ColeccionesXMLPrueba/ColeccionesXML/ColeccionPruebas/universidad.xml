@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<universidad>
+  <departamento telefono="112233" tipo="A">
+    <codigo>IFC1</codigo>
+    <nombre>Inform�tica</nombre>
+   <empleado salario="2000">
+      <puesto>Asociado</puesto>
+      <nombre>Juan Parra</nombre>
+   </empleado>
+   <empleado salario="2300">
+      <puesto>Profesor</puesto>
+      <nombre>Alicia Mart�n</nombre>
+   </empleado>
+  </departamento>
+
+  <departamento telefono="990033" tipo="A">
+   <codigo>MAT1</codigo>
+   <nombre>Matem�ticas</nombre>
+   <empleado salario="1900">
+      <puesto>T�cnico</puesto>
+      <nombre>Juan Parra</nombre>
+   </empleado>
+   <empleado salario="2100">
+      <puesto>Profesor</puesto>
+      <nombre>M� Jes�s Ramos</nombre>
+   </empleado>
+	   <empleado salario="2300">
+      <puesto>Profesor</puesto>
+      <nombre>Pedro Paniagua</nombre>
+   </empleado>
+   <empleado salario="2500">
+      <puesto>Tutor</puesto>
+      <nombre>Antonia Gonz�lez</nombre>
+   </empleado>
+  </departamento>
+  
+  <departamento telefono="880833" tipo="B">
+   <codigo>MAT2</codigo>
+   <nombre>An�lisis</nombre>
+   <empleado salario="1900">
+      <puesto>Asociado</puesto>
+      <nombre>Laura Ruiz</nombre>
+   </empleado>
+   <empleado salario="2200">
+      <puesto>Asociado</puesto>
+      <nombre>Mario Garc�a</nombre>
+   </empleado>
+  </departamento>
+
+</universidad >

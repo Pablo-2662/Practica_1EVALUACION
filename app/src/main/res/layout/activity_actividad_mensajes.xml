@@ -7,57 +7,118 @@
     android:layout_height="match_parent"
     tools:context=".ActividadMensajes"
     android:orientation="vertical">
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="3.5"
-        android:background="#98FB98"
-        android:layout_gravity="center">
+        android:layout_height="60dp"
+        android:background="@drawable/fondomensajes">
         <TextView
-            android:id="@+id/tituloMensajes"
+            android:id="@+id/bandejaEntrada"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/tituloMensajes"
+            android:textColor="@color/white"
+            android:text="BUZÓN DE ENTRADA"
             android:gravity="center"
-            android:textSize="30dp"
-            ></TextView>
+            android:textStyle="italic"
+            android:textSize="35dp">
+        </TextView>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:layout_gravity="center"
+        android:background="@drawable/fondomensajeria"
         android:orientation="vertical">
-        <Button
-            android:id="@+id/ejemploMensaje"
+        <LinearLayout
+            android:layout_marginTop="30dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
-            android:backgroundTint="#DACDC5"
-            android:textColor="@color/black"
-            android:text="@string/textoMensajePrueba">
-        </Button>
+            android:layout_height="400dp"
+            android:layout_marginBottom="20dp">
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <ListView
+                android:id="@+id/listaMensajes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </ListView>
+            </ScrollView>
+        </LinearLayout>
 
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="3.5"
-        android:orientation="vertical"
-        android:background="#98FB98"
-        android:layout_gravity="center">
-        <ImageButton
-            android:id="@+id/botonEnviarMensaje"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="10dp"
-            android:src="@drawable/imagenmensaje">
-        </ImageButton>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="#0ACF75">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="50dp">
+                <TextView
+                    android:id="@+id/textoPara"
+                    android:layout_width="match_parent"
+                    android:background="@color/white"
+                    android:hint="Para..."
+                    android:textSize="25dp"
+                    android:gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:layout_height="match_parent">
+                </TextView>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="90dp">
+                <TextView
+                    android:id="@+id/textview_mensaje"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:background="@drawable/hojacuaderno1"
+                    android:textSize="18dp"
+                    android:gravity="center">
+                </TextView>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/botonVolverMensaje"
+                    android:layout_width="100dp"
+                    android:layout_marginTop="10dp"
+                    android:backgroundTint="#1F8E5C"
+                    android:layout_marginLeft="30dp"
+                    style="@style/Widget.Material3.Button.ElevatedButton"
+                    android:text="VOLVER"
+                    android:textSize="14dp"
+                    android:textColor="@color/white"
+                    android:layout_height="wrap_content">
+                </com.google.android.material.button.MaterialButton>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/botonEnviarMensaje"
+                    android:layout_width="100dp"
+                    android:layout_marginTop="10dp"
+                    android:backgroundTint="#1F8E5C"
+                    android:layout_marginLeft="15dp"
+                    style="@style/Widget.Material3.Button.ElevatedButton"
+                    android:text="ENVIAR"
+                    android:textSize="14dp"
+                    android:textColor="@color/white"
+                    android:layout_height="wrap_content">
+                </com.google.android.material.button.MaterialButton>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/actualizarMensajes"
+                    android:layout_width="140dp"
+                    android:layout_marginTop="10dp"
+                    android:backgroundTint="#1F8E5C"
+                    android:layout_marginLeft="15dp"
+                    style="@style/Widget.Material3.Button.ElevatedButton"
+                    android:text="ACTUALIZAR"
+                    android:textSize="15dp"
+                    android:textColor="@color/white"
+                    android:layout_height="wrap_content">
+                </com.google.android.material.button.MaterialButton>
+            </LinearLayout>
 
+        </LinearLayout>
     </LinearLayout>
 
 </LinearLayout>
