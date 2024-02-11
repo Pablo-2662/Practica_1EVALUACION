@@ -11,65 +11,79 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="2.5"
-        android:background="#d8f8e1"
-        android:layout_gravity="center">
+        android:layout_weight="4.5"
+        android:background="#999999">
         <TextView
             android:id="@+id/tituloTareas"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:textStyle="bold"
+            android:text="TAREAS"
             android:gravity="center"
-            android:text="@string/tituloTareas"
-            android:textSize="30dp">
+            android:textSize="30dp"
+            android:textColor="@color/white">
+
         </TextView>
     </LinearLayout>
+
+
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         android:layout_weight="1"
         android:background="@color/white">
-        <Button
-            android:id="@+id/botonEjemploTarea"
+
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
-            android:backgroundTint="#b2e2f2"
-            android:textColor="@color/black"
-            android:text="@string/ejemploTarea">
-        </Button>
+            android:layout_height="match_parent">
+            <ListView
+                android:id="@+id/listaTareas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </ListView>
+        </ScrollView>
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="2.7"
-        android:background="#b0c2f2"
+        android:layout_weight="4.5"
+        android:orientation="horizontal"
+        android:background="#FFFFCC"
         android:layout_gravity="center">
 
         <Button
             android:id="@+id/botonVolverTareas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="#b2e2f2"
+            android:layout_gravity="center"
             android:gravity="center"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="100dp"
-            android:layout_marginRight="20dp"
-            android:text="@string/textoVolver"
-            android:textColor="@color/black">
+            style="@style/Widget.Material3.Button.ElevatedButton"
+            android:textSize="20dp"
+            android:textColor="@color/white"
+            android:layout_marginLeft="50dp"
+            android:backgroundTint="#999999"
+            android:text="@string/textoVolver">
         </Button>
+
         <Button
-            android:id="@+id/botonAgregarTarea"
+            android:id="@+id/botonActualizarTareas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="#b2e2f2"
+            android:layout_gravity="center"
             android:gravity="center"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="20dp"
-            android:text="@string/agregarTarea"
-            android:textColor="@color/black">
+            style="@style/Widget.Material3.Button.ElevatedButton"
+            android:textSize="20dp"
+            android:textColor="@color/white"
+            android:layout_marginLeft="10dp"
+            android:backgroundTint="#999999"
+            android:text="ACTUALIZAR">
         </Button>
+
+
     </LinearLayout>
 
 </LinearLayout>

@@ -144,6 +144,41 @@ public class ActividadMenuUsuario extends AppCompatActivity {
                 startActivity(actividadMensajes);
             }
         });
+        Button botonTareas = (Button) findViewById(R.id.botonActividadTareas);
+        botonTareas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("usuario");
+                Query query = databaseReference.orderByChild("email").equalTo(correoRecogido);
+
+                query.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if (snapshot.exists()) {
+                            for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                                Usuario usuario = dataSnapshot.getValue(Usuario.class);
+                                String puesto = usuario.getPuesto();
+                                if (puesto.equals("JefeEstudios")){
+                                    Intent intent = new Intent(ActividadMenuUsuario.this, ActividadCrearTarea.class);
+                                    intent.putExtras(datosUsuarioRecogidos);
+                                    startActivity(intent);
+                                }else{
+                                    Intent intent = new Intent(ActividadMenuUsuario.this, ActividadTareas.class);
+                                    intent.putExtras(datosUsuarioRecogidos);
+                                    startActivity(intent);
+                                }
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+            }
+        });
+
 
 
 
@@ -173,15 +208,7 @@ public class ActividadMenuUsuario extends AppCompatActivity {
 
 
 
-Button botonTareas = (Button) findViewById(R.id.botonActividadTareas);
-        botonTareas.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent irATareas = new Intent(ActividadMenuUsuario.this, ActividadTareas.class);
-                irATareas.putExtras(datosUsuarioRecogidos);
-                startActivity(irATareas);
-            }
-        });
+
 
         Button botonPermisos = (Button) findViewById(R.id.botonActividadPermisos);
         botonPermisos.setOnClickListener(new View.OnClickListener() {

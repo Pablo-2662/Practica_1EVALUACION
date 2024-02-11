@@ -34,7 +34,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="10dp"
             android:layout_weight="5"
             android:orientation="horizontal">
 
@@ -94,9 +94,6 @@
                 android:id="@+id/botonActividadHorario"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/Widget.Material3.Button.ElevatedButton"
-                android:textSize="20dp"
-                android:textColor="@color/white"
                 android:layout_marginRight="60dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="60dp"
@@ -135,10 +132,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="60dp"
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:textSize="20dp"
+                android:textColor="@color/white"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="60dp"
                 android:backgroundTint="#8eb6ed"
                 android:text="@string/textoBotonTareas"></Button>
+            <Button
+                android:id="@+id/botonActividadGuardias"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="60dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="60dp"
+                android:backgroundTint="#8eb6ed"
+                android:text="GUARDIAS"></Button>
 
             <Button
                 android:id="@+id/botonActividadPermisos"
