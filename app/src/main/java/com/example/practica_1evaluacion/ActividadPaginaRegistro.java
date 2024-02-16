@@ -18,7 +18,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class ActividadPaginaRegistro extends AppCompatActivity {
-
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference myRef = database.getReference("horarios");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -103,6 +104,10 @@ public class ActividadPaginaRegistro extends AppCompatActivity {
                                             // El correo electrónico no existe en la base de datos, se puede registrar el usuario
                                             Usuario u = new Usuario(correoUsuario, nombreUsuario, contrasena, telefono, finalPuesto);
                                             databaseReference.child(correoUsuario).setValue(u);
+
+                                            String idHorario = myRef.push().getKey();
+                                            Horario horario = new Horario(correoUsuario, "Vacio", "Vacio", "Vacio", "Vacio", "Vacio");
+                                            myRef.child(idHorario).setValue(horario);
                                             Snackbar.make(findViewById(R.id.layout_registro), "Registrado!!!", Snackbar.LENGTH_INDEFINITE)
                                                     .setAction("Aceptar", new View.OnClickListener() {
                                                         @Override
@@ -120,6 +125,9 @@ public class ActividadPaginaRegistro extends AppCompatActivity {
 
                                     }
                                 });
+
+
+
 
                             }
                         }

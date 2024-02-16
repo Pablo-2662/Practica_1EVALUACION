@@ -14,8 +14,9 @@
             android:gravity="center_vertical"
             android:layout_marginLeft="40dp"
             android:textSize="35sp"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textStyle="bold"
+            android:background="@drawable/horario"
             android:padding="16dp"
             android:shadowColor="#8eb6ed"
             android:shadowDx="3"
@@ -25,208 +26,206 @@
     </LinearLayout>
 
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:background="@color/white">
+        android:background="@color/white"
+        android:orientation="vertical">
 
-        <HorizontalScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TableLayout
-            android:id="@+id/tablaHorario"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:stretchColumns="1">
+            android:layout_height="400dp"
+            android:orientation="vertical">
 
-            <!-- Encabezados de la tabla -->
-            <TableRow>
-                <TextView
-                    android:id="@+id/CampoHora"
-                    android:text="Hora"
-                    android:padding="8dp"
-                    android:gravity="center"
-                    android:background="@android:color/holo_blue_light"/>
-                <TextView
-                    android:id="@+id/CampoLunes"
-                    android:text="Lunes"
-                    android:padding="8dp"
-                    android:gravity="center"
-                    android:background="@android:color/holo_green_light"/>
-                <TextView
-                    android:id="@+id/CampoMartes"
-                    android:text="Martes"
-                    android:padding="8dp"
-                    android:gravity="center"
-                    android:background="@android:color/holo_green_light"/>
-                <TextView
-                    android:id="@+id/CampoMiercoles"
-                    android:text="Miércoles"
-                    android:padding="8dp"
-                    android:gravity="center"
-                    android:background="@android:color/holo_green_light"/>
-                <TextView
-                    android:id="@+id/CampoJueves"
-                    android:text="Jueves"
-                    android:padding="8dp"
-                    android:gravity="center"
-                    android:background="@android:color/holo_green_light"/>
-                <TextView
-                    android:id="@+id/CampoViernes"
-                    android:text="Viernes"
-                    android:padding="8dp"
-                    android:gravity="center"
-                    android:background="@android:color/holo_green_light"/>
-            </TableRow>
+            <TextView
+                android:id="@+id/etiquetaLunes"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="48dp"
+                android:gravity="center"
+                android:text="LUNES"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
-            <!-- Filas de datos -->
-            <TableRow>
-                <TextView
-                    android:id="@+id/PrimeraHora"
-                    android:text="8:00 AM - 9:30 AM"
-                    android:padding="8dp"
-                    android:gravity="center"/>
-                <TextView
-                    android:id="@+id/PrimeraLunes"
-                    android:text="Clase de Matemáticas"
-                    android:padding="8dp"
-                    android:gravity="center"/>
-                <TextView
-                    android:id="@+id/PrimeraMartes"
-                    android:text="Clase de Historia"
-                    android:padding="8dp"
-                    android:gravity="center"/>
-                <TextView
-                    android:id="@+id/PrimeraMiercoles"
-                    android:text="Reunión de Profesores"
-                    android:padding="8dp"
-                    android:gravity="center"/>
-                <TextView
-                    android:id="@+id/PrimeraJueves"
-                    android:text="Clase de Ciencias"
-                    android:padding="8dp"
-                    android:gravity="center"/>
-                <TextView
-                    android:id="@+id/PrimeraViernes"
-                    android:text="Clase de Inglés"
-                    android:padding="8dp"
-                    android:gravity="center"/>
-            </TableRow>
+            <EditText
+                android:id="@+id/textoLunes"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="48dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:textSize="15dp"></EditText>
 
-            <TableRow>
-                <TextView
-                    android:id="@+id/SegundaHora"
-                    android:text="9:45 AM - 11:15 AM"
-                    android:padding="8dp"
-                    android:gravity="center"/>
-                <TextView
-                    android:id="@+id/SegundaLunes"
-                    android:text="Clase de Ciencias"
-                    android:padding="8dp"
-                    android:gravity="center"/>
-                <TextView
-                    android:id="@+id/SegundaMartes"
-                    android:text="Guardia"
-                    android:padding="8dp"
-                    android:gravity="center"/>
-                <TextView
-                    android:id="@+id/SegundaMiercoles"
-                    android:text="Reunión de Departamento"
-                    android:padding="8dp"
-                    android:gravity="center"/>
-                <TextView
-                    android:id="@+id/SegundaJueves"
-                    android:text="Clase de Historia"
-                    android:padding="8dp"
-                    android:gravity="center"/>
-                <TextView
-                    android:id="@+id/SegundaViernes"
-                    android:text="Clase de Ciencias"
-                    android:padding="8dp"
-                    android:gravity="center"/>
-            </TableRow>
-            <TableRow>
-                <TextView
-                    android:id="@+id/TerceraHora"
-                    android:text="11:45 AM - 13:15 AM"
-                    android:padding="8dp"
-                    android:gravity="center"/>
+            <TextView
+                android:id="@+id/etiquetaMartes"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="48dp"
+                android:gravity="center"
+                android:text="MARTES"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
-                <TextView
-                    android:id="@+id/TerceraLunes"
-                    android:gravity="center"
-                    android:padding="8dp"
-                    android:text="Clase de Lenguaje" />
+            <EditText
+                android:id="@+id/textoMartes"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="48dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:textSize="15dp"></EditText>
 
-                <TextView
-                    android:id="@+id/TerceraMartes"
-                    android:text="Clase de Francés"
-                    android:padding="8dp"
-                    android:gravity="center"/>
-                <TextView
-                    android:id="@+id/TerceraMiercoles"
-                    android:text="Reunión de Departamento"
-                    android:padding="8dp"
-                    android:gravity="center"/>
-                <TextView
-                    android:id="@+id/TerceraJueves"
-                    android:text="Clase de Ciencias"
-                    android:padding="8dp"
-                    android:gravity="center"/>
-                <TextView
-                    android:id="@+id/TerceraViernes"
-                    android:text="Clase de Química"
-                    android:padding="8dp"
-                    android:gravity="center"/>
-            </TableRow>
-            <TableRow>
-                <TextView
-                    android:id="@+id/CuartaHora"
-                    android:text="13:20 AM - 14:30 AM"
-                    android:padding="8dp"
-                    android:gravity="center"/>
-                <TextView
-                    android:id="@+id/CuartaLunes"
-                    android:text="Clase de Matemáticas"
-                    android:padding="8dp"
-                    android:gravity="center"/>
-                <TextView
-                    android:id="@+id/CuartaMartes"
-                    android:text="Clase de Inglés"
-                    android:padding="8dp"
-                    android:gravity="center"/>
-                <TextView
-                    android:id="@+id/CuartaMiercoles"
-                    android:text="Clase de Lenguaje"
-                    android:padding="8dp"
-                    android:gravity="center"/>
-                <TextView
-                    android:id="@+id/CuartaJueves"
-                    android:text="Guardia"
-                    android:padding="8dp"
-                    android:gravity="center"/>
-                <TextView
-                    android:id="@+id/CuartaViernes"
-                    android:text="Guardia"
-                    android:padding="8dp"
-                    android:gravity="center"/>
-            </TableRow>
-        </TableLayout>
-        </HorizontalScrollView>
+            <TextView
+                android:id="@+id/etiquetaMiercoles"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="48dp"
+                android:gravity="center"
+                android:text="MIÉRCOLES"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
+
+            <EditText
+                android:id="@+id/textoMiercoles"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="48dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:textSize="15dp"></EditText>
+
+            <TextView
+                android:id="@+id/etiquetaJueves"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="48dp"
+                android:gravity="center"
+                android:text="JUEVES"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
+
+            <EditText
+                android:id="@+id/textJueves"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="48dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:textSize="15dp"></EditText>
+
+            <TextView
+                android:id="@+id/etiquetaViernes"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="48dp"
+                android:gravity="center"
+                android:text="VIERNES"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
+
+            <EditText
+                android:id="@+id/textViernes"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="48dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:textSize="15dp"></EditText>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:orientation="horizontal">
+                    <Button
+                        android:id="@+id/botonReunionH"
+                        android:backgroundTint="#AED6F1"
+                        style="@style/Widget.Material3.Button.ElevatedButton"
+                        android:textSize="16dp"
+                        android:text="REUNIONES"
+                        android:textStyle="bold"
+                        android:textColor="#2196F3"
+                        android:layout_width="140dp"
+                        android:layout_height="match_parent">
+                    </Button>
+                    <TextView
+                        android:id="@+id/numeroReuniones"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textSize="30dp"
+                        android:textColor="@color/black">
+                    </TextView>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:orientation="horizontal">
+                    <Button
+                        android:id="@+id/botonGuardiasH"
+                        android:backgroundTint="#AED6F1"
+                        style="@style/Widget.Material3.Button.ElevatedButton"
+                        android:textSize="16dp"
+                        android:text="GUARDIAS"
+                        android:textStyle="bold"
+                        android:textColor="#2196F3"
+                        android:layout_width="140dp"
+                        android:layout_height="match_parent">
+                    </Button>
+                    <TextView
+                        android:id="@+id/numeroGuardias"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textSize="30dp"
+                        android:textColor="@color/black">
+                    </TextView>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+                <Button
+                    android:id="@+id/guardarHorario"
+                    android:layout_width="match_parent"
+                    android:backgroundTint="#AED6F1"
+                    style="@style/Widget.Material3.Button.ElevatedButton"
+                    android:textSize="16dp"
+                    android:layout_marginRight="20dp"
+                    android:text="GUARDAR"
+                    android:layout_gravity="center"
+                    android:textStyle="bold"
+                    android:textColor="#2196F3"
+                    android:layout_height="wrap_content">
+                </Button>
+            </LinearLayout>
+        </LinearLayout>
 
 
     </LinearLayout>
-
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="3"
-        android:background="#96B6C5"
+        android:background="#2196F3"
         android:orientation="horizontal"
         android:gravity="center">
 
@@ -242,7 +241,7 @@
             >
         </Button>
         <Button
-            android:id="@+id/boton_ActualizarHorario"
+            android:id="@+id/boton_EditarHorario"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/Widget.Material3.Button.ElevatedButton"
@@ -250,7 +249,7 @@
             android:layout_marginLeft="30dp"
             android:textColor="@color/white"
             android:backgroundTint="@android:color/holo_blue_dark"
-            android:text="ACTUALIZAR">
+            android:text="EDITAR">
         </Button>
 
     </LinearLayout>

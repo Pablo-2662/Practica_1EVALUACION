@@ -179,34 +179,40 @@ public class ActividadMenuUsuario extends AppCompatActivity {
             }
         });
 
+        Button botonGuardias = (Button) findViewById(R.id.botonActividadGuardias);
+        botonGuardias.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("usuario");
+                Query query = databaseReference.orderByChild("email").equalTo(correoRecogido);
 
+                query.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if (snapshot.exists()) {
+                            for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                                Usuario usuario = dataSnapshot.getValue(Usuario.class);
+                                String puesto = usuario.getPuesto();
+                                if (puesto.equals("JefeEstudios")){
+                                    Intent intent = new Intent(ActividadMenuUsuario.this, ActividadAsignarGuardia.class);
+                                    intent.putExtras(datosUsuarioRecogidos);
+                                    startActivity(intent);
+                                }else{
+                                    Intent intent = new Intent(ActividadMenuUsuario.this, GestionGuardias.class);
+                                    intent.putExtras(datosUsuarioRecogidos);
+                                    startActivity(intent);
+                                }
+                            }
+                        }
+                    }
 
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
 
-
-    }
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-
-
-
-
+                    }
+                });
+            }
+        });
 
 
 
@@ -214,26 +220,39 @@ public class ActividadMenuUsuario extends AppCompatActivity {
         botonPermisos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final String  puestoRecogido = datosUsuarioRecogidos.getString("Trabajo");
-                if(puestoRecogido.equals("Jefe de estudios")){
-                    Intent actividadPermisos = new Intent(ActividadMenuUsuario.this, ActividadPermisos.class);
-                    actividadPermisos.putExtras(datosUsuarioRecogidos);
-                    startActivity(actividadPermisos);
+                DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("usuario");
+                Query query = databaseReference.orderByChild("email").equalTo(correoRecogido);
 
-                }else if (puestoRecogido.equals("Coordinador")||puestoRecogido.equals("Docente")){
-                    Intent actividadCrearPermisos = new Intent(ActividadMenuUsuario.this, ActividadCrearPermisos.class);
-                    actividadCrearPermisos.putExtras(datosUsuarioRecogidos);
-                    startActivity(actividadCrearPermisos);
-                }
+                query.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if (snapshot.exists()) {
+                            for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                                Usuario usuario = dataSnapshot.getValue(Usuario.class);
+                                String puesto = usuario.getPuesto();
+                                if (puesto.equals("JefeEstudios")){
+                                    Intent intent = new Intent(ActividadMenuUsuario.this, ActividadGestionarPermisos.class);
+                                    intent.putExtras(datosUsuarioRecogidos);
+                                    startActivity(intent);
+                                }else{
+                                    Intent intent = new Intent(ActividadMenuUsuario.this, CrearPermiso.class);
+                                    intent.putExtras(datosUsuarioRecogidos);
+                                    startActivity(intent);
+                                }
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
             }
         });
 
-
-
-
-
-
     }
+
 }
 
-*/
+

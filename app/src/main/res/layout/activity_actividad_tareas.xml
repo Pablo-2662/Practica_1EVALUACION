@@ -36,15 +36,13 @@
         android:layout_weight="1"
         android:background="@color/white">
 
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+
             <ListView
                 android:id="@+id/listaTareas"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
             </ListView>
-        </ScrollView>
+
     </LinearLayout>
 
     <LinearLayout

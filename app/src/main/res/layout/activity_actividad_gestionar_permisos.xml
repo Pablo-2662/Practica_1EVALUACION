@@ -4,32 +4,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ActividadAusenciasJefe"
     android:orientation="vertical"
-    android:background="#D98880">
+    android:layout_height="match_parent"
+    tools:context=".ActividadGestionarPermisos">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="4.5"
-        android:background="#943126">
+        android:background="#F1C5AE">
         <TextView
-            android:id="@+id/tituloInformes"
+            android:id="@+id/tituloGestionPermisos"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:textStyle="bold"
-            android:text="@string/tituloAusencias"
+            android:text="PERMISOS"
             android:gravity="center"
             android:textSize="30dp"
             android:textColor="@color/white">
-
         </TextView>
     </LinearLayout>
 
 
     <LinearLayout
-        android:id="@+id/layoutscrolleableAu"
         android:layout_width="match_parent"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
@@ -38,11 +35,10 @@
         android:layout_weight="1"
         android:background="@color/white">
 
-
         <ListView
-            android:id="@+id/listaAusencias"
+            android:id="@+id/listaPermisos"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
         </ListView>
     </LinearLayout>
 
@@ -51,11 +47,11 @@
         android:layout_height="match_parent"
         android:layout_weight="4.5"
         android:orientation="horizontal"
-        android:background="#943126"
+        android:background="#DE885A"
         android:layout_gravity="center">
 
         <Button
-            android:id="@+id/botonVolverPantallaAusenciasJefe"
+            android:id="@+id/botonVolverPantallaPermisos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -64,12 +60,12 @@
             android:textSize="20dp"
             android:textColor="@color/white"
             android:layout_marginLeft="50dp"
-            android:backgroundTint="#D98880"
+            android:backgroundTint="#F1C5AE"
             android:text="@string/textoVolver">
         </Button>
 
         <Button
-            android:id="@+id/botonActualizarAusencias"
+            android:id="@+id/botonActualizarPermisos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -78,7 +74,7 @@
             android:textSize="20dp"
             android:textColor="@color/white"
             android:layout_marginLeft="10dp"
-            android:backgroundTint="#D98880"
+            android:backgroundTint="#F1C5AE"
             android:text="ACTUALIZAR">
         </Button>
 
