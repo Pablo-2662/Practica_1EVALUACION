@@ -77,7 +77,6 @@
             android:layout_marginTop="20dp"
             app:counterMaxLength="10"
             app:counterEnabled="true"
-            app:helperText="No puede haber caracteres especiales"
             android:hint="CONTRASEÑA">
             <EditText
                 android:id="@+id/textoContrasenyaRegistro"
@@ -123,7 +122,6 @@
             app:boxCornerRadiusTopStart="40dp"
             android:layout_marginTop="20dp"
             app:counterMaxLength="9"
-            app:helperText="No incluir espacios"
             app:counterEnabled="true"
             android:hint="TELÉFONO">
             <EditText

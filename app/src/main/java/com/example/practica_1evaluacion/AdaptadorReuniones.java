@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -31,10 +32,12 @@ public class    AdaptadorReuniones extends ArrayAdapter<Reunion> {
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        View vista = convertView;
-        if (vista == null) {
+        final View vista;
+        if (convertView == null) {
             LayoutInflater inflater = LayoutInflater.from(getContext());
-            vista = inflater.inflate(R.layout.estilo_listview_reuniones, null);
+            vista = inflater.inflate(R.layout.estilo_listview_reuniones, parent, false);
+        } else {
+            vista = convertView;
         }
 
         // Obtener la reunión en la posición actual
@@ -51,7 +54,23 @@ public class    AdaptadorReuniones extends ArrayAdapter<Reunion> {
         textViewFecha.setText(reunion.getFecha());
         textViewHora.setText(reunion.getHora());
         checkBoxAsistencia.setChecked(reunion.isAsistencia());
-        
+
+        checkBoxAsistencia.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (checkBoxAsistencia.isChecked()){
+                    reunion.setAsistencia(true);
+                    checkBoxAsistencia.setChecked(true);
+                    Snackbar snackbar = Snackbar.make(vista,"Vas a asistir a la reunión ",Snackbar.LENGTH_SHORT);
+                    snackbar.show();
+                }else{
+                    reunion.setAsistencia(false);
+                    Snackbar snackbar = Snackbar.make(vista,"No vas a asistir",Snackbar.LENGTH_SHORT);
+                    checkBoxAsistencia.setChecked(false);
+                    snackbar.show();
+                }
+            }
+        });
 
         return vista;
     }

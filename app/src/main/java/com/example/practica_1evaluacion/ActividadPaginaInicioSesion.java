@@ -73,6 +73,7 @@ public class ActividadPaginaInicioSesion extends AppCompatActivity {
                     puesto = "JefeEstudios";
                 }
 
+                final String puestoFinal = puesto;
                 // Verificar si el usuario existe en la base de datos
                 DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("usuario");
                 databaseReference.child(correo).addListenerForSingleValueEvent(new ValueEventListener() {
@@ -81,8 +82,7 @@ public class ActividadPaginaInicioSesion extends AppCompatActivity {
                         if (dataSnapshot.exists()) {
                             // El usuario existe, verificar la contraseña
                             Usuario usuario = dataSnapshot.getValue(Usuario.class);
-                            if (usuario != null && usuario.getContrasena().equals(contrasena)) {
-                                // Contraseña correcta, pasar a la siguiente actividad
+                            if (usuario != null && usuario.getContrasena().equals(contrasena) && usuario.getPuesto().equals(puestoFinal)) {
                                 Bundle datosEnviados = new Bundle();
                                 datosEnviados.putString("correo",correo);
                                 Intent intent = new Intent(ActividadPaginaInicioSesion.this, ActividadMenuUsuario.class);
@@ -90,11 +90,10 @@ public class ActividadPaginaInicioSesion extends AppCompatActivity {
                                 startActivity(intent);
                             } else {
                                 // Contraseña incorrecta
-                                Snackbar.make(findViewById(R.id.inicioSesion), "Contraseña incorrecta", Snackbar.LENGTH_SHORT).show();
+                                Snackbar.make(findViewById(R.id.inicioSesion), "Credenciales erróneas", Snackbar.LENGTH_SHORT).show();
                             }
                         } else {
                             // El usuario no existe
-                            Snackbar.make(findViewById(R.id.inicioSesion), "Usuario no encontrado. Regístrate primero.", Snackbar.LENGTH_SHORT).show();
                             Intent intent = new Intent(ActividadPaginaInicioSesion.this, ActividadPaginaRegistro.class);
                             startActivity(intent);
                         }
